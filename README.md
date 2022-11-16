@@ -11,7 +11,7 @@
 * Notes
 
 ## Description
-*Fill this in later*
+Given that one of our team members is single, we have decided to create the perfect dating app! 
 
 ### Presentation Requirements
 
@@ -42,6 +42,7 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 ## Credit
 #### Group project created by:
 * Maggie Abernathy
+* Dalton Fletcher
 * Carson Kennedy
 * Alexandria White
 
@@ -53,4 +54,8 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 * URL of deployed application: 
 
 ## 📝 Notes
-*
+> Other dating apps:
+> * Bumble: Matches only last 24 hours with the girl needing to message first. If the man does not respond after the initial message, the match disappears.
+> * Hinge: Subscription needed for advanced filters. Even with premium accounts they are not always accurate. First message must come from the person that received the first like. 
+> * The League: Exclusive app that requires admission. Only 5 matches allowed at a time.
+
