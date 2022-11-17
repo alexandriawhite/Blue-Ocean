@@ -1,4 +1,4 @@
-var badRequestUrl = 'https://api.github.com/unicorns';
+var badRequestUrl = './index.html';
 var redirectUrl = './404.html';
 
 fetch(badRequestUrl).then(function (response) {
