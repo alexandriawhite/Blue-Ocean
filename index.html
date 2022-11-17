@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blue Ocean</title>
+    <!-- Bulma CSS API -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!--jquery link-->
     <script
@@ -13,29 +15,91 @@
       crossorigin="anonymous"
     ></script>
 </head>
-<body class="min-100-vh flex-column">
-  <header class="p-5 text-center text-white bg-primary">
-    <h1>Server-Side APIs</h1>
-  </header>
-  <main class="flex-row justify-center align-center col-auto p-4 bg-light">
-    <section class="card card-rounded col-7 bg-white">
-      <header class="card-header text-center">
-        <h2 class="text-white">
-          Document Location
-        </h2>
-      </header>
-      <div class="p-3">
-        <p class="card-body">
-          Navigate to the MDN Documenation.
-          <br /><br />
-          Open 'script.js' and implement the location.replace method.
-        </p>
+<body>
+  <!-- hero header for Blue Ocean -->
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <p class="title center">
+        Blue Ocean
+      </p>
+      <p class="center subtitle">
+        An alternative dating scene.
+      </p>
+    </div>
+    <!-- navbar buttons sign up and log in -->
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" id="sign-up-btn" href="./index.html">
+            <strong>Sign up</strong>
+          </a>
+          <!-- TODO login button needs a destination or js to hide current page and show new -->
+          <a class="button is-light" id="log-in-btn" href="./">
+            Log in
+          </a>
+        </div>
       </div>
-      <footer class="card-footer text-center">
-        Open the console in your browser to see the responses!
-      </footer>
+    </div>
+  </section>
+  <section>
+    <!-- creating tile layout -->
+    <div class="tile is-12 is-ancestor">
+      <div class="tile is-10 is-parent is-vertical center-content">
+        <article class="tile is-child box">
+          <!-- join now tile -->
+          <p class="title center">Join Now</p>
+          <!-- input name -->
+          <p class="subtitle center"><div class="field">
+            <label class="label">Name</label>
+            <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Text input">
+            </div>
+          </div>
+          <!-- input username -->
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Username Input" value="">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <!-- optional notification for username -->
+            <p class="help hide">This username is available</p>
+          </div>
+          <!-- input email -->
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="email@domain.com" value="">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+            </div>
+            <!-- optional notification for email -->
+            <p class="help hide">This email is invalid</p>
+          </div>
+          <!-- submit button -->
+          <div class="center">
+            <!-- TODO needs link or js to hide page and create new -->
+            <a class=" button is-light" id="create-profile-btn" href="./"> Submit </a>
+          </div>
+        </p>
+        </article>
+        <!-- possible second tile? -->
+        <article class="tile is-child box">
+          <p class="title">Two</p>
+          <p class="subtitle">Subtitle</p>
+        </article>
+      </div>
     </section>
-  </main>
-  <script src="assets/js/script.js"></script>
 </body>
+  <script src="assets/js/script.js"></script>
+
 </html>
