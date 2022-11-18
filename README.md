@@ -12,7 +12,7 @@
 * Notes
 
 ## Description
-This app was created for people that keep striking out on typical dating apps. Seeing this as a blue ocean opportunity, our team has decided to create the perfect solution! Together we worked to change the typical dating style by persuing a more love is blind approach so the user is able to actually get to know their potential match  before rating their physical appearance. There are a multitude of dating apps but we want to keep users from wasting time on the superficial aspects and find their true match. 
+ This app was created for people that keep striking out on typical dating apps. Seeing this as a blue ocean opportunity, our team has decided to create the perfect solution! Together we worked to change the typical dating style by persuing a more love is blind approach so the user is able to actually get to know their potential match  before rating their physical appearance. There are a multitude of dating apps but we want to keep users from wasting time on the superficial aspects and find their true match. 
 
 ### Presentation Requirements
 Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
@@ -26,7 +26,7 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 ### User Story
 > * GIVEN a dating app with form inputs
 > * WHEN I navigate to the website
-> * THEN I am presented with a comprehensive layout that promts the user to fill out their dating information
+> * THEN I am presented with a comprehensive layout that prompts the user to fill out their dating information
 > * WHEN I input my likes and interests
 > * THEN I am presented with potential matches relevant to my interests without their photo
 > * WHEN I match based on likes and interests
