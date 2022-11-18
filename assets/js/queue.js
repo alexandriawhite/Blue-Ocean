@@ -15,7 +15,8 @@ let men = [
         ],
         creativity: [
             "photography",
-            "singing"
+            "singing",
+            "writing"
         ]
     },
     {
