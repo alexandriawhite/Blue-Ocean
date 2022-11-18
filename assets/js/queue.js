@@ -4,7 +4,7 @@ let men = [
         numb: 1,
         name: "Jack",
         age: 18,
-        pic: "./assets/images/", /*need to make html element in javaScript*/
+        pic: "./assets/images/jack.png", /*need to make html element in javaScript*/
         sports: [
             "swimming",
             "hiking",
@@ -23,7 +23,7 @@ let men = [
         numb: 2,
         name: "Carson",
         age: 22,
-        pic: "./assets/images/", 
+        pic: "./assets/images/carson.png", 
         sports: [
             "lacross",
             "hiking",
@@ -43,7 +43,7 @@ let men = [
         numb: 3,
         name: "Justin",
         age: 24,
-        pic: "./assets/images/", 
+        pic: "./assets/images/justin.png", 
         sports: [
             "football",
             "baseball",
@@ -61,7 +61,7 @@ let men = [
         numb: 4,
         name: "Dalton",
         age: 29,
-        pic: "./assets/images/", 
+        pic: "./assets/images/dalton.png", 
         sports: [
             "boxing",
             "hiking",
@@ -80,7 +80,7 @@ let men = [
         numb: 5,
         name: "Trevor",
         age: 24,
-        pic: "./assets/images/", 
+        pic: "./assets/images/trevor.png", 
         sports: [
             "swimming",
             "climbing",
@@ -99,7 +99,7 @@ let women = [
         numb: 1,
         name: "Maggie",
         age: 18,
-        pic: "./assets/images/", 
+        pic: "./assets/images/maggie.png", 
         sports: [
             "gymnastics",
             "soccer",
@@ -115,7 +115,7 @@ let women = [
         numb: 2,
         name: "Katie",
         age: 23,
-        pic: "./assets/images/", 
+        pic: "./assets/images/katie.png", 
         sports: [
             "dance",
             "gymnastics",
@@ -130,7 +130,7 @@ let women = [
         numb: 3,
         name: "Kaitlin",
         age: 29,
-        pic: "./assets/images/", 
+        pic: "./assets/images/kaitlin.png", 
         sports: [
             "swimming",
             "dance"
@@ -144,7 +144,7 @@ let women = [
         numb: 4,
         name: "Madelyn",
         age: 24,
-        pic: "./assets/images/", 
+        pic: "./assets/images/madelyn.png", 
         sports: [
             "dance",
             "gymnastics",
@@ -160,7 +160,7 @@ let women = [
         numb: 5,
         name: "Chelsea",
         age: 21,
-        pic: "./assets/images/", 
+        pic: "./assets/images/chelsea.png", 
         sports: [
             "football",
             "basketball",
