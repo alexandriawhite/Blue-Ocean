@@ -51,7 +51,6 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 #### Group project created by:
 * Maggie Abernathy
 * Dalton Fletcher
-* Carson Kennedy
 * Alexandria White
 
 ## License
