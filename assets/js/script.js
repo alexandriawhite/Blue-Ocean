@@ -1,7 +1,9 @@
 var badRequestUrl = './index.html';
 var redirectUrl = './404.html';
 var user = localStorage.getItem('blueOceanUser') || {};
-
+let formname = document.querySelector(".formname");
+let formusername = document.querySelector(".formusername");
+let formemail = document.querySelector(".formemail");
 
 
 
@@ -34,7 +36,7 @@ function hobbiesElement(hobbie) {
 }
 
 
-
+/* 
 const otherCheckbox = document.querySelector('#other');
 const otherText = document.querySelector('#otherValue');
 otherText.style.visibility = 'hidden';
@@ -46,7 +48,7 @@ otherCheckbox.addEventListener('change', () => {
     } else {
         otherText.style.visibility = 'hidden';
     }
-});
+});*/
 
 
 function appendHobbies() {
@@ -90,3 +92,33 @@ $("#hobbiesForm").submit(e => {
 //     searches.push(city);
 //     localStorage.setItem(searchKey, JSON.stringify(searches));
 // }}
+
+function formTemplate () {
+    // create template later 
+    `    <div class="field">
+      <label class="label">Username</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input" type="text" placeholder="Username Input" value="">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>`
+}
+
+function generateForm(){
+    let formEl = document.querySelector(".form")
+    let name = document.createElement("input");
+    let username = document.createElement("input");
+    let email = document.createElement("input");
+    formEl.append(name,username,email)
+    
+
+}
+
+// Add event listener to search button
+signup.addEventListener("click", generateForm);
+
+
