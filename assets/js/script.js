@@ -4,6 +4,7 @@ var user = localStorage.getItem('blueOceanUser') || {};
 let formname = document.querySelector(".formname");
 let formusername = document.querySelector(".formusername");
 let formemail = document.querySelector(".formemail");
+let signup = document.querySelector(".signup")
 
 
 
@@ -25,7 +26,12 @@ function userInfo (){
     info.append(info);
 }*/
 
+// Signup form Handler
+$('#signupForm').submit(function(e) {
+    e.preventDefault();
+    userHobbies();
 
+})
 
 function hobbiesElement(hobbie) {
     var hobbieElement = `<div>
@@ -124,18 +130,14 @@ $("#hobbiesForm").submit(e => {
 function generateForm(){
     let form = document.querySelector(".hide")
     form.classList.remove("hide");
-
 }
 
-function userHobbies(){
-    let form = document.querySelector(".hide")
-    form.classList.add("hide");
-        location.href("./hobbies.html");
+var userHobbies = function(){
+    let signupForm = document.querySelector(".signupForm")
+    let hobbiesForm = document.querySelector(".hideform")
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.remove("hideform");
 }
 
 // Add event listener to search button
 signup.addEventListener("click", generateForm);
-
-submit.addEventListener("click", userHobbies)
-
-

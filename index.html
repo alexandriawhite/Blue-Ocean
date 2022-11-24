@@ -26,14 +26,14 @@
         </header>
         <!-- AW changed this from section to div-->
         <section class="hero is-primary tile is-12 is-ancestor" alt="photo of couple">
-            <!-- <div class="hero-body">-->
-            <h1>Blue Ocean</h1>
-            <h2>An alternative dating scene</h2>
+            <div class="hero-body">
+                <h1>Blue Ocean</h1>
+                <h2>An alternative dating scene</h2>
             </div>
             <!-- Creating the form -->
             <div class="tile is-10 is-parent is-vertical center-content">
-                <article class="tile is-child box hide">
-                    <form method="get">
+                <article class="tile is-child box hide signupForm">
+                    <form id="signupForm">
                         <div class="form">
                             <!--Form section-->
                             <!-- input name -->
@@ -77,10 +77,9 @@
                             <!-- submit button -->
                             <div class="center">
                                 <!-- TODO needs link or js to hide page and create new -->
-                                <a class="button is-light" id="create-profile-btn" href="./hobbies.html"> Submit </a>
+                                <button class="button is-light" id="create-profile-btn"> Submit </button>
                             </div>
                             </p>
-
 
 
                             <!-- TODO needs link or js to hide page and create new -->
@@ -88,9 +87,25 @@
                         </div>
                     </form>
                 </article>
+                <article class="tile is-child box hideform">
+                    <form id="hobbiesForm">
+                        <fieldset>
+                            <legend class="info">Choose your interests</legend>
+                            <div id="hobbiesList">
+                            </div>
+                            <input type="checkbox" id="other" name="interest" value="other" />
+                            <label for="other">Other</label>
+                            <input type="text" id="otherValue" name="other" />
+                        </fieldset>
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </article>
             </div>
-            <script src="assets/js/queue.js"></script>
-            <script src="assets/js/script.js"></script>
+        </section>
+        <script src="assets/js/queue.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 
 </html>
