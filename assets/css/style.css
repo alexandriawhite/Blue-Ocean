@@ -27,7 +27,7 @@ h2 {
     font-style: italic;
 }
 
-.hide {
+.hide, .hideform {
     display: none;
 }
 .center {
