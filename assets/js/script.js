@@ -53,11 +53,24 @@ otherCheckbox.addEventListener('change', () => {
 
 function appendHobbies() {
     var hobbies = ["swimming",
-        "hiking",
-        "football",
-        "baseball",
-        "soccer",
-        "hockey"];
+    "hiking",
+    "football",
+    "baseball",
+    "soccer",
+    "hockey",
+     "lacross",
+     "wrestling",
+    "golf",
+    "basketball",
+     "boxing",
+    "cycling",
+    "bowling",
+     "swimming",
+    "climbing",
+    "gymnastics",
+    "dance",
+    "cheer"
+    ];
     for (var i = 0; i <= hobbies.length; i++) {
         $("#hobbiesList").append(hobbiesElement(hobbies[i]))
     }
@@ -93,32 +106,36 @@ $("#hobbiesForm").submit(e => {
 //     localStorage.setItem(searchKey, JSON.stringify(searches));
 // }}
 
-function formTemplate () {
-    // create template later 
-    `    <div class="field">
-      <label class="label">Username</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="text" placeholder="Username Input" value="">
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
-      </div>`
-}
+// function formTemplate () {
+//     // create template later 
+//     `    <div class="field">
+//       <label class="label">Username</label>
+//       <div class="control has-icons-left has-icons-right">
+//         <input class="input" type="text" placeholder="Username Input" value="">
+//         <span class="icon is-small is-left">
+//           <i class="fas fa-user"></i>
+//         </span>
+//         <span class="icon is-small is-right">
+//           <i class="fas fa-check"></i>
+//         </span>
+//       </div>`
+// }
 
 function generateForm(){
-    let formEl = document.querySelector(".form")
-    let name = document.createElement("input");
-    let username = document.createElement("input");
-    let email = document.createElement("input");
-    formEl.append(name,username,email)
-    
+    let form = document.querySelector(".hide")
+    form.classList.remove("hide");
 
+}
+
+function userHobbies(){
+    let form = document.querySelector(".hide")
+    form.classList.add("hide");
+        location.href("./hobbies.html");
 }
 
 // Add event listener to search button
 signup.addEventListener("click", generateForm);
+
+submit.addEventListener("click", userHobbies)
 
 
