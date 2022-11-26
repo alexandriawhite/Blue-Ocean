@@ -6,7 +6,9 @@ let formusername = document.querySelector(".formusername");
 let formemail = document.querySelector(".formemail");
 let signup = document.querySelector(".signup");
 let login = document.querySelector(".login");
-let loginScreen = document.querySelector(".loginScreen")
+let loginScreen = document.querySelector(".loginScreen");
+let profile = document.querySelector("#profile");
+let profileSection = document.querySelector(".profile")
 
 
 
@@ -142,13 +144,24 @@ var userHobbies = function(){
 }
 
 let userLogin = function(){
-    console.log("login")
     loginScreen.classList.remove("loginScreen")
     login.classList.add("navHideLogin")
     signup.classList.add("navHideSignup")
 }
 
+let userProfile = function(){
+    console.log("test");
+profileSection.classList.remove("userProfile");
+closeNav();
+}
 
+//Profile picture function
+var loadFile = function (event) {
+    var image = document.getElementById("output");
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+
+profile.addEventListener("click", userProfile)
 
 login.addEventListener("click", userLogin);
 

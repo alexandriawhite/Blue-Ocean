@@ -26,7 +26,7 @@ h2 {
     font-style: italic;
 }
 
-.hide, .hideform, .loginScreen, .navHideSignup, .navHideLogin {
+.hide, .hideform, .loginScreen, .navHideSignup, .navHideLogin, .userProfile {
     display: none;
 }
 
@@ -190,7 +190,30 @@ body {
     right: 35px;
     }
   }
+ 
 
+
+
+
+
+
+
+
+
+
+.profile-pic {
+  color: transparent;
+  transition: all .3s ease;
+  position: relative;
+  transition: all .3s ease;
+}
+
+
+  
+ 
+  
+
+  
 
 
 
