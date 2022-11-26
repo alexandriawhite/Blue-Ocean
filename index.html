@@ -25,9 +25,9 @@
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="overlay-content">
-                      <a href="#">Profile</a>
-                      <a href="#">Matches</a>
-                      <a href="#">Settings</a>
+                      <a id="profile" href="#">Profile</a>
+                      <a id="matches" href="#">Matches</a>
+                      <a id="settings" href="#">Settings</a>
                     </div>
                   </div>
                   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -95,6 +95,7 @@
                         </div>
                     </form>
                 </article>
+                <!--Hobbies Section-->
                 <article class="tile is-child box hideform">
                     <form id="hobbiesForm">
                         <fieldset>
@@ -110,6 +111,7 @@
                         </div>
                     </form>
                 </article>
+                <!--Login Section-->
                 <article class="tile is-child box loginScreen">
                     <div>   
                         <label>Username: </label>   
@@ -119,6 +121,23 @@
                         <button class ="loginForm" type="submit">Login</button>   
                         <input type="checkbox" checked="checked"> Remember me   
                         <button type="button" class="cancelbtn"> Cancel</button>   
+                </article>
+                <!--User Profile Section-->
+                <article class="tile is-child box profile userProfile">
+                    <div>   
+                        <div class="profile-pic">
+                            <label>Profile Picture: </label>
+                            <input id="file" type="file" onchange="loadFile(event)"/>
+                            <img src="./assets/images/profileimg.jpg" id="output" width="200" />
+                          </div>
+                        <label>First Name: </label>   
+                        <input class="name" type="text" placeholder="Enter Name" name="name" required>  
+                        <label>Bio: </label>   
+                        <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>  
+                        <label class="age">Age range for matches:</label>
+                        <input type="text" id="minAge" placeholder="Minimum age">
+                        <input type="text" id="maxAge" placeholder="Maximum age">
+                        <button class ="saveProfile" type="submit">Save</button>      
                 </article>
             </div>
         </section>
