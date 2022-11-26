@@ -22,6 +22,15 @@
                     <button id="signup" class="signup">Sign up</button>
                     <button id="login" class="login">Login</button>
                 </div>
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                      <a href="#">Profile</a>
+                      <a href="#">Matches</a>
+                      <a href="#">Settings</a>
+                    </div>
+                  </div>
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </nav>
         </header>
         <!-- AW changed this from section to div-->
@@ -115,6 +124,13 @@
         </section>
         <script src="assets/js/queue.js"></script>
         <script src="assets/js/script.js"></script>
+        <script>function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+          }
+          
+          function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+          }</script>
     </body>
 
 </html>
