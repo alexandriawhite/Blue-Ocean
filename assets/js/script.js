@@ -148,6 +148,8 @@ let userLogin = function(){
     signup.classList.add("navHideSignup")
 }
 
+
+
 login.addEventListener("click", userLogin);
 
 // Add event listener to search button
