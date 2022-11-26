@@ -4,7 +4,9 @@ var user = localStorage.getItem('blueOceanUser') || {};
 let formname = document.querySelector(".formname");
 let formusername = document.querySelector(".formusername");
 let formemail = document.querySelector(".formemail");
-let signup = document.querySelector(".signup")
+let signup = document.querySelector(".signup");
+let login = document.querySelector(".login");
+let loginScreen = document.querySelector(".loginScreen")
 
 
 
@@ -138,6 +140,15 @@ var userHobbies = function(){
     signupForm.classList.add("hide");
     hobbiesForm.classList.remove("hideform");
 }
+
+let userLogin = function(){
+    console.log("login")
+    loginScreen.classList.remove("loginScreen")
+    login.classList.add("navHideLogin")
+    signup.classList.add("navHideSignup")
+}
+
+login.addEventListener("click", userLogin);
 
 // Add event listener to search button
 signup.addEventListener("click", generateForm);

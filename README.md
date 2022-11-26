@@ -53,6 +53,9 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 * Dalton Fletcher
 * Alexandria White
 
+#### Content
+* Couple image from: https://www.vecteezy.com/photo/1738887-couple-having-fun-by-the-ocean
+
 ## License
 * MIT License
 
