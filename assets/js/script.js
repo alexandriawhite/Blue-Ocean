@@ -8,7 +8,12 @@ let signup = document.querySelector(".signup");
 let login = document.querySelector(".login");
 let loginScreen = document.querySelector(".loginScreen");
 let profile = document.querySelector("#profile");
-let profileSection = document.querySelector(".profile")
+let matches = document.querySelector("#matches");
+let settings = document.querySelector("#settings");
+let profileSection = document.querySelector(".profile");
+let matchesSection = document.querySelector(".matches");
+let settingsSection = document.querySelector(".settings");
+let cancel = document.querySelector(".cancelbtn");
 
 
 
@@ -155,13 +160,35 @@ profileSection.classList.remove("userProfile");
 closeNav();
 }
 
+let userMatches = function(){
+matchesSection.classList.remove("userMatches");
+closeNav();
+}
+
+let userSettings = function(){
+    settingsSection.classList.remove("userSettings");
+    closeNav();
+    }
+
+
 //Profile picture function
 var loadFile = function (event) {
     var image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
   };
 
+//Cancel button on login section
+let closeLogin = function(){
+    loginScreen.classList.add("loginScreen")
+    login.classList.remove("navHideLogin")
+    signup.classList.remove("navHideSignup")
+}
+
+cancel.addEventListener("click", closeLogin)
+
 profile.addEventListener("click", userProfile)
+matches.addEventListener("click", userMatches)
+settings.addEventListener("click", userSettings)
 
 login.addEventListener("click", userLogin);
 
