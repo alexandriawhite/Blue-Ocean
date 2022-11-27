@@ -89,9 +89,6 @@
                                 <button class="button is-light" id="create-profile-btn"> Submit </button>
                             </div>
                             </p>
-
-                            <!-- TODO needs link or js to hide page and create new -->
-                            <!--  <a class=" button is-light" id="create-profile-btn" href="./"> Submit </a>-->
                         </div>
                     </form>
                 </article>
@@ -122,36 +119,6 @@
                         <input type="checkbox" checked="checked"> Remember me
                         <button type="button" class="cancelbtn"> Cancel</button>
                 </article>
-                <!--User Profile Section-->
-                <article class="tile is-child box profile userProfile">
-                    <div>
-                        <div class="profile-pic">
-                            <label>Profile Picture: </label>
-                            <input id="file" type="file" onchange="loadFile(event)" />
-                            <img src="./assets/images/profileimg.jpg" id="output" width="200" />
-                        </div>
-                        <label>First Name: </label>
-                        <input class="name" type="text" placeholder="Enter Name" name="name" required>
-                        <label>Bio: </label>
-                        <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
-                        <label class="location">Dating in: </label>
-                        <div><span id="city"></span>, <span id="state"></span></div>
-                        <label>Job: </label>
-                        <input class="job" type="text" placeholder="Enter job">
-                        <label>School: </label>
-                        <input class="school" type="text" placeholder="Enter school">
-                        <button class="saveProfile" type="submit">Save</button>
-                </article>
-                <!--User Matches Section-->
-                <article class="tile is-child box matches userMatches">
-                    <label>Matches: </label>
-                </article>
-                <!--User Settings Section-->
-                <article class="tile is-child box settings userSettings">
-                    <label>Settings: </label>
-                    <label class="age">Age range for matches:</label>
-                    <input type="text" id="minAge" placeholder="Minimum age">
-                    <input type="text" id="maxAge" placeholder="Maximum age">
                 </article>
             </div>
         </section>

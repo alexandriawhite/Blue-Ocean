@@ -172,3 +172,7 @@ let women = [
         ]
     },
 ];
+
+
+//Will need to update this once we have the API working 
+//module.exports={men,women};
