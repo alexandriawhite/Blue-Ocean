@@ -54,7 +54,8 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 * Alexandria White
 
 #### Content
-* Couple image from: https://www.vecteezy.com/photo/1738887-couple-having-fun-by-the-ocean
+* Couple image: https://www.vecteezy.com/photo/1738887-couple-having-fun-by-the-ocean
+* Profile pic placeholder: https://media.istockphoto.com/id/1214428300/vector/default-profile-picture-avatar-photo-placeholder-vector-illustration.jpg?s=612x612&w=0&k=20&c=vftMdLhldDx9houN4V-g3C9k0xl6YeBcoB_Rk6Trce0=
 
 ## License
 * MIT License

@@ -25,12 +25,12 @@
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="overlay-content">
-                      <a id="profile" href="#">Profile</a>
-                      <a id="matches" href="#">Matches</a>
-                      <a id="settings" href="#">Settings</a>
+                        <a id="profile" href="#">Profile</a>
+                        <a id="matches" href="#">Matches</a>
+                        <a id="settings" href="#">Settings</a>
                     </div>
-                  </div>
-                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                </div>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </nav>
         </header>
         <!-- AW changed this from section to div-->
@@ -89,9 +89,6 @@
                                 <button class="button is-light" id="create-profile-btn"> Submit </button>
                             </div>
                             </p>
-
-                            <!-- TODO needs link or js to hide page and create new -->
-                            <!--  <a class=" button is-light" id="create-profile-btn" href="./"> Submit </a>-->
                         </div>
                     </form>
                 </article>
@@ -113,51 +110,20 @@
                 </article>
                 <!--Login Section-->
                 <article class="tile is-child box loginScreen">
-                    <div>   
-                        <label>Username: </label>   
-                        <input class="userLogin" type="text" placeholder="Enter Username" name="username" required>  
-                        <label>Password: </label>   
-                        <input class="userLogin" type="password" placeholder="Enter Password" name="password" required>  
-                        <button class ="loginForm" type="submit">Login</button>   
-                        <input type="checkbox" checked="checked"> Remember me   
-                        <button type="button" class="cancelbtn"> Cancel</button>   
+                    <div>
+                        <label>Username: </label>
+                        <input class="userLogin" type="text" placeholder="Enter Username" name="username" required>
+                        <label>Password: </label>
+                        <input class="userLogin" type="password" placeholder="Enter Password" name="password" required>
+                        <button class="loginForm" type="submit">Login</button>
+                        <input type="checkbox" checked="checked"> Remember me
+                        <button type="button" class="cancelbtn"> Cancel</button>
                 </article>
-                <!--User Profile Section-->
-                <article class="tile is-child box profile userProfile">
-                    <div>   
-                        <div class="profile-pic">
-                            <label>Profile Picture: </label>
-                            <input id="file" type="file" onchange="loadFile(event)"/>
-                            <img src="./assets/images/profileimg.jpg" id="output" width="200" />
-                          </div>
-                        <label>First Name: </label>   
-                        <input class="name" type="text" placeholder="Enter Name" name="name" required>  
-                        <label>Bio: </label>   
-                        <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>  
-                        <label class="age">Age range for matches:</label>
-                        <input type="text" id="minAge" placeholder="Minimum age">
-                        <input type="text" id="maxAge" placeholder="Maximum age">
-                        <button class ="saveProfile" type="submit">Save</button>      
                 </article>
-                 <!--User Matches Section-->
-                 <article class="tile is-child box matches userMatches">
-                        <label>Matches: </label>        
-                </article>
-                  <!--User Settings Section-->
-                  <article class="tile is-child box settings userSettings">
-                    <label>Settings: </label>        
-            </article>
             </div>
         </section>
         <script src="assets/js/queue.js"></script>
         <script src="assets/js/script.js"></script>
-        <script>function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-          }
-          
-          function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-          }</script>
     </body>
 
 </html>
