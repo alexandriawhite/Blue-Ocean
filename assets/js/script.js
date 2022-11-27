@@ -14,12 +14,12 @@ let profileSection = document.querySelector(".profile");
 let matchesSection = document.querySelector(".matches");
 let settingsSection = document.querySelector(".settings");
 let cancel = document.querySelector(".cancelbtn");
-const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 var state = document.getElementById('state');
 var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
+const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 
 
 /*404 error
@@ -195,8 +195,6 @@ $.ajax({
     dataType: 'json',
     success: function(data) {
         $.each(data.results, function(key,value){
-            console.log(key);
-            console.log(value.name.title);
             let randomHobbies= Math.floor(Math.random() * hobbieList.length);
             value['hobbies'] = hobbieList[randomHobbies];
             if(value.gender=== "male") {
