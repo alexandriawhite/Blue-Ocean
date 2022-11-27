@@ -19,6 +19,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
+const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 
 
 
@@ -230,7 +231,25 @@ let closeLogin = function () {
     login.classList.remove("navHideLogin")
     signup.classList.remove("navHideSignup")
 }
-
+//email validation api needs to be called, input an if statement about if the validation is good or bad.//
+// Use eventlistenercd .. or an onclick to load when you tell it to.//
+$.ajax({
+    url: 'https://randomuser.me/api/?results=10',
+    dataType: 'json',
+    success: function(data) {
+        $.each(data.results, function(key,value){
+            let randomHobbies= Math.floor(Math.random() * hobbieList.length);
+            value['hobbies'] = hobbieList[randomHobbies];
+            if(value.gender=== "male") {
+                men.push(value)
+            } else {
+                women.push(value)
+            }
+        })
+      console.log(men);
+      console.log(women);
+    }
+  });
 cancel.addEventListener("click", closeLogin)
 
 profile.addEventListener("click", userProfile)
@@ -241,3 +260,4 @@ login.addEventListener("click", userLogin);
 
 // Add event listener to search button
 signup.addEventListener("click", generateForm);
+
