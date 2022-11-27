@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Profile</title>
+</head>
+<body>
+  <!--User Profile Section-->
+  <article class="tile is-child box profile userProfile">
+    <div>
+        <div class="profile-pic">
+            <label>Profile Picture: </label>
+            <input id="file" type="file" onchange="loadFile(event)" />
+            <img src="./assets/images/profileimg.jpg" id="output" width="200" />
+        </div>
+        <label>First Name: </label>
+        <input class="name" type="text" placeholder="Enter Name" name="name" required>
+        <label>Bio: </label>
+        <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
+        <label class="location">Dating in: </label>
+        <div><span id="city"></span>, <span id="state"></span></div>
+        <label>Job: </label>
+        <input class="job" type="text" placeholder="Enter job">
+        <label>School: </label>
+        <input class="school" type="text" placeholder="Enter school">
+        <button class="saveProfile" type="submit">Save</button>
+</article>
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
