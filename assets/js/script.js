@@ -184,7 +184,7 @@ let closeLogin = function(){
     signup.classList.remove("navHideSignup")
 }
 //email validation api needs to be called, input an if statement about if the validation is good or bad.//
-// Use eventlistener or an onclick to load when you tell it to.//
+// Use eventlistenercd .. or an onclick to load when you tell it to.//
 $.ajax({
     url: 'https://randomuser.me/api/?results=10',
     dataType: 'json',
