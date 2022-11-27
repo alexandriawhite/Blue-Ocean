@@ -14,6 +14,13 @@ let profileSection = document.querySelector(".profile");
 let matchesSection = document.querySelector(".matches");
 let settingsSection = document.querySelector(".settings");
 let cancel = document.querySelector(".cancelbtn");
+    var state = document.getElementById('state');
+    var city = document.getElementById('city');
+    let signupForm = document.querySelector(".signupForm");
+    let hobbiesForm = document.querySelector(".hideform");
+    let form = document.querySelector(".hide");
+
+
 
 
 
@@ -34,6 +41,34 @@ function userInfo (){
     info.textContent = `test`
     info.append(info);
 }*/
+
+//Dating location
+function callback(data)
+    {
+        state.innerHTML = data.state;
+        city.innerHTML = data.city;
+    }
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://geolocation-db.com/json/geoip.php?jsonp=callback';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(script, h);
+
+
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
+    settingsSection.classList.add("userSettings");
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
 
 // Signup form Handler
 $('#signupForm').submit(function(e) {
@@ -65,7 +100,7 @@ otherCheckbox.addEventListener('change', () => {
     }
 });*/
 
-
+//Appending hobbies list
 function appendHobbies() {
     var hobbies = ["swimming",
     "hiking",
@@ -137,34 +172,43 @@ $("#hobbiesForm").submit(e => {
 // }
 
 function generateForm(){
-    let form = document.querySelector(".hide")
     form.classList.remove("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
+    settingsSection.classList.add("userSettings");
 }
 
+
 var userHobbies = function(){
-    let signupForm = document.querySelector(".signupForm")
-    let hobbiesForm = document.querySelector(".hideform")
     signupForm.classList.add("hide");
     hobbiesForm.classList.remove("hideform");
 }
 
+//Displays login screen and takes away login and signup buttons
 let userLogin = function(){
     loginScreen.classList.remove("loginScreen")
     login.classList.add("navHideLogin")
     signup.classList.add("navHideSignup")
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
+    settingsSection.classList.add("userSettings");
 }
 
+//Displays user profile
 let userProfile = function(){
-    console.log("test");
 profileSection.classList.remove("userProfile");
 closeNav();
 }
-
+//Displays user matches
 let userMatches = function(){
 matchesSection.classList.remove("userMatches");
 closeNav();
 }
-
+//Displays user settings 
 let userSettings = function(){
     settingsSection.classList.remove("userSettings");
     closeNav();
