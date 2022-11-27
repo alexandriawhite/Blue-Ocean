@@ -15,6 +15,11 @@ let matchesSection = document.querySelector(".matches");
 let settingsSection = document.querySelector(".settings");
 let cancel = document.querySelector(".cancelbtn");
 const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
+var state = document.getElementById('state');
+var city = document.getElementById('city');
+let signupForm = document.querySelector(".signupForm");
+let hobbiesForm = document.querySelector(".hideform");
+let form = document.querySelector(".hide");
 
 
 /*404 error
