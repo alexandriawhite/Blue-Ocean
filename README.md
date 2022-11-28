@@ -1,15 +1,14 @@
 # Blue Ocean
 ## Table of Contents:
-
-* Description 
-* Presentation Requirements
-* User Story
-* Acceptance Criteria
-* Screenshot
-* Credit
-* License
-* Links
-* Notes
+[Description](#Description)
+[Presentation Requirements](#Presentation-Requirements)  
+[User Story](#User-Story)
+[Acceptance Criteria](#Acceptance-Criteria)
+[Screenshot](#Screenshot)
+[Credit](#Credit)
+[License](#License)
+[Links](#Links)
+[📝 Notes](#📝-Notes)
 
 ## Description
  This app was created for people that keep striking out on typical dating apps. Seeing this as a blue ocean opportunity, our team has decided to create the perfect solution! Together we worked to change the typical dating style by persuing a more love is blind approach so the user is able to actually get to know their potential match  before rating their physical appearance. There are a multitude of dating apps but we want to keep users from wasting time on the superficial aspects and find their true match. 

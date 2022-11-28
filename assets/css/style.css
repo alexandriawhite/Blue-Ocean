@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 .hero {
     position:relative;
     height: 700px;
@@ -19,6 +20,7 @@ h1 {
     font-size: 80px;
 
 }
+
 h2 {
     text-align: center;
     font-weight:normal;
@@ -129,17 +131,11 @@ body {
     box-sizing: border-box;   
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.red {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
 
 .overlay {
     height: 100%;
@@ -191,42 +187,9 @@ body {
     }
   }
  
-
-
-
-
-
-
-
-
-
-
 .profile-pic {
   color: transparent;
   transition: all .3s ease;
   position: relative;
   transition: all .3s ease;
 }
-
-
-  
- 
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

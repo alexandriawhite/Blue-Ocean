@@ -19,6 +19,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
+let register
 const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 
 
@@ -73,6 +74,7 @@ function closeNav() {
 // Signup form Handler
 $('#signupForm').submit(function (e) {
     e.preventDefault();
+    createUser()
     userHobbies();
 
 })
@@ -282,4 +284,86 @@ login.addEventListener("click", userLogin);
 
 // Add event listener to search button
 signup.addEventListener("click", generateForm);
+
+// Create a registration system
+var userGroup = [
+	{
+		username: 'dalton',
+		password: 'admin'
+	},
+	{
+		username: 'alexandria',
+		password: 'admin'
+	},
+	{
+		username: 'maggie',
+		password: 'admin'
+	}
+]
+
+// login
+function userlogin() {
+	let username = document.getElementById('username').value;
+	let password = document.getElementById('password').value;
+
+	for(var i = 0; i < userGroup.length; i++) {
+		// check to 
+		if(username == userGroup[i].username && password == userGroup[i].password) {
+			console.log(username + ' logged in');
+			break;
+		} else {
+			// error if username and password don't match
+			console.log('incorrect username or password');
+		}
+	}
+};
+
+// register functionality
+function createUser() {
+	let newUsername = document.getElementById('newUsername').value;
+	let newPassword = document.getElementById('newPassword').value;
+	// store new user data in newUser object so i can push the object into userGroup
+	let newUser = {
+		username: newUsername,
+		password: newPassword
+	};
+    try {
+        // loop through userGroup array to see if the username is taken, or password to short
+        for(var i = 0; i < userGroup.length; i++) {
+            // check if new username is equal to any already created usernames
+            if(newUsername == userGroup[i].username) {
+                // text prompt that username is taken
+                $('#nameTaken').show();
+                console.log("bad username")
+                throw new Error("Missing Parameters")
+                
+            } 
+            // else if (newPassword.length < 8) {
+            // 	// show invalid
+            // 	$('#invalidPassword').show();
+            //     console.log("bad password")
+            //     break;
+                
+            // }
+            // else {
+            //     $('#nameTaken').hide();
+            //     $('#invalidPassword').hide();
+            //     console.log("passed")
+            // }
+        };
+        if (newPassword.length < 8) {
+                // show invalid
+                
+                $('#invalidPassword').show();
+                console.log("bad password")
+                throw new Error("Missing Parameters")
+        }
+    }
+	// push new object to the people array
+    catch {
+        userGroup.push(newUser);
+        console.log(userGroup);
+        userHobbies();
+    }
+}
 
