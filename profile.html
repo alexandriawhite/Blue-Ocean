@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/profile.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Profile</title>
-</head>
-<body>
-  <!--User Profile Section-->
-  <article class="tile is-child box profile userProfile">
-    <div>
-        <div class="profile-pic">
-            <label>Profile Picture: </label>
-            <input id="file" type="file" onchange="loadFile(event)" />
-            <img src="./assets/images/profileimg.jpg" id="output" width="200" />
-        </div>
-        <label>First Name: </label>
-        <input class="name" type="text" placeholder="Enter Name" name="name" required>
-        <label>Bio: </label>
-        <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
-        <label class="location">Dating in: </label>
-        <div><span id="city"></span>, <span id="state"></span></div>
-        <label>Job: </label>
-        <input class="job" type="text" placeholder="Enter job">
-        <label>School: </label>
-        <input class="school" type="text" placeholder="Enter school">
-        <button class="saveProfile" type="submit">Save</button>
-</article>
 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile</title>
+        <!-- Bulma CSS API -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!--jquery link-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    </head>
 
-    <script src="./assets/js/script.js"></script>
-</body>
+    <body>
+        <!--User Profile Section-->
+        <article class="tile is-child box profile">
+            <div>
+                <div class="profile-pic">
+                    <label>Profile Picture: </label>
+                    <input id="file" type="file" onchange="loadFile(event)" />
+                    <img src="./assets/images/profileimg.jpg" id="output" width="200" />
+                </div>
+                <label>First Name: </label>
+                <input class="name" type="text" placeholder="Enter Name" name="name" required>
+                <label>Bio: </label>
+                <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
+                <label class="location">Dating in: </label>
+                <div><span id="city"></span>, <span id="state"></span></div>
+                <label>Job: </label>
+                <input class="job" type="text" placeholder="Enter job">
+                <label>School: </label>
+                <input class="school" type="text" placeholder="Enter school">
+                <button class="saveProfile" type="submit">Save</button>
+        </article>
+        <!-- <script src="./assets/js/script.js"></script> -->
+        <script src="./assets/js/queue.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
+
 </html>

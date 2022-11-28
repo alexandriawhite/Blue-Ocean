@@ -203,18 +203,34 @@ let userLogin = function () {
 let userProfile = function () {
     window.location.replace("./profile.html")
     profileSection.classList.remove("userProfile");
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    matchesSection.classList.add("userMatches");
+    settingsSection.classList.add("userSettings");
+
     closeNav();
 }
 //Displays user matches
 let userMatches = function () {
     window.location.replace("./matches.html")
     matchesSection.classList.remove("userMatches");
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    settingsSection.classList.add("userSettings");
     closeNav();
 }
 //Displays user settings 
 let userSettings = function () {
     window.location.replace("./settings.html")
     settingsSection.classList.remove("userSettings");
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
     closeNav();
 }
 
@@ -230,6 +246,12 @@ let closeLogin = function () {
     loginScreen.classList.add("loginScreen")
     login.classList.remove("navHideLogin")
     signup.classList.remove("navHideSignup")
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
+    settingsSection.classList.add("userSettings");
 }
 //email validation api needs to be called, input an if statement about if the validation is good or bad.//
 // Use eventlistenercd .. or an onclick to load when you tell it to.//
