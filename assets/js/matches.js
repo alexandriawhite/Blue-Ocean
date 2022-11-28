@@ -3,35 +3,55 @@ console.log({ men, women });
 
 var matches = {
     potential: users[Math.floor(Math.random() * users.length)], //get prefernce from localuser
-    accepted: [], rejected: []
+    accepted: JSON.parse(localStorage.getItem("matches")) || [], rejected: [] 
 }
-console.log({matches})
+console.log({ matches })
 
 
 function randomUser() {
     let user = matches.potential[Math.floor(Math.random() * matches.potential.length)]
-    console.log({rando: user})
+    console.log({ rando: user })
     return user;
 }
 
 function appendUser(user) {
-    console.log({user});
+    console.log({ user });
     $(`.userpic`).css(`background`, `url(${user.pic}) no-repeat center/80%`);
 }
 let currentMatch = randomUser();
 
 appendUser(currentMatch);
 
+// Add a search local storage function to look for matches already logged
+// Add to the list if there are already people there: Done
+// Needs to be part of the filter as well
+// Create page to loop through the matches and display them 
+// When they login - clear out the matches and start over 
+// Will add authenticiation when we are able to use servers (this is what it will look like when logging in and out)
+
+
+
 $(`.match`).click(() => {
     console.log("accept");
+    matches.potential = matches.potential.filter((matchOptions) => {
+        if (matchOptions.numb === currentMatch.numb) {
+            return false
+        } else { return true }
+    })
     matches.accepted.push(currentMatch);
     console.log(matches);
     currentMatch = randomUser();
     appendUser(currentMatch);
+    localStorage.setItem("matches", JSON.stringify(matches.accepted))
 })
 
 $(`.reject`).click(() => {
     console.log("reject")
+    matches.potential = matches.potential.filter((matchOptions) => {
+        if (matchOptions.numb === currentMatch.numb) {
+            return false
+        } else { return true }
+    })
     matches.rejected.push(currentMatch);
     console.log(matches)
     currentMatch = randomUser();
