@@ -50,7 +50,6 @@ class ZeroBounceApi {
             get.open('GET', uri, false);
             get.send();
             if (get.readyState == 4 && get.status == 200) {
-                console.log(get.responseText);
                 var responseObj= get.responseText;
                 return JSON.parse(responseObj).status;
             }
@@ -62,4 +61,3 @@ var emailAuth = new ZeroBounceApi(apiKey)
 // ZeroBounceApi.apiKey
 // ZeroBounceApi.getCredits()
 var result= emailAuth.validate("global_suppression@example.com")
-console.log(result)
