@@ -20,7 +20,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
-
+var modal = $("#modal")
 let loginBtn = $("#loginBtn")
 let register
 
@@ -325,10 +325,11 @@ function createUser() {
             var result= emailAuth.validate(emailInput);
             // if(result === "alias_address" || result === "leading_period_removed") {
                 if(result == "valid") {
-                alert("Your email is valid.")    
+                    console.log("is active")
+                 
             }
             else if (result == "invalid") {
-            $('#emailInvalid').show();
+                $('#emailInvalid').show();
             break;
             };
             throw new error("profile created")
@@ -341,7 +342,35 @@ function createUser() {
 		username: newUsername,
 		password: newPassword
 	};
+        openModal();
         userGroup.push(newUser);
         userHobbies();
     }
 }
+
+    // Functions to open and close a modal
+    function openModal() {
+      document.getElementById("modal").classList.add("is-active")
+    }
+  
+    function closeModal() {
+        document.getElementById("modal").classList.remove("is-active")
+    }
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      const e = event || window.event;
+  
+      if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+      }
+    });
