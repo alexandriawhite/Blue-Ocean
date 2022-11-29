@@ -215,9 +215,9 @@ let closeLogin = function () {
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
+    profileSection?.classList.add("userProfile");
+    matchesSection?.classList.add("userMatches");
+    settingsSection?.classList.add("userSettings");
 }
 //email validation api needs to be called, input an if statement about if the validation is good or bad.//
 // Use eventlistenercd .. or an onclick to load when you tell it to.//
