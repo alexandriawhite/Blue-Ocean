@@ -1,10 +1,19 @@
+fetchRandomUsers().then((data)=> {
+    var datingPool = data.results;
+    console.log({datingPool});
 
 const users = [men, women]; //import dummy data
 console.log({ men, women });
 
+var genderFilter = 'male';
+var filteredPool = datingPool.filter((person) => {
+    return person.gender === genderFilter;
+});
+
 var matches = {
-    potential: users[Math.floor(Math.random() * users.length)], //get prefernce from localuser
-    accepted: JSON.parse(localStorage.getItem("matches")) || [], rejected: []
+    potential: filteredPool, //get prefernce from localuser
+    accepted: JSON.parse(localStorage.getItem("matches")) || [], 
+    rejected: []
 }
 console.log({ matches })
 
@@ -21,8 +30,9 @@ function appendUser(user) {
     // compare those two likes to the current match likes
         // Try to use currentMatch.hobbies.includes(user.like)   
         // If does include go to user - if else skip to next user 
-    console.log({ user }); if (user) {
-        $(`.userpic`).css(`background`, `url(${user.pic}) no-repeat center/80%`);
+    console.log({ user }); 
+    if (user) {
+        $(`.userpic`).css(`background`, `url(${user.picture.large}) no-repeat center/80%`);
     }
     else { alert("Out of matches") }
 }
@@ -42,7 +52,7 @@ appendUser(currentMatch);
 $(`.match`).click(() => {
     console.log("accept");
     matches.potential = matches.potential.filter((matchOptions) => {
-        if (matchOptions.numb === currentMatch.numb) {
+        if (matchOptions.id.value === currentMatch.id.value) {
             return false
         } else { return true }
     })
@@ -56,7 +66,7 @@ $(`.match`).click(() => {
 $(`.reject`).click(() => {
     console.log("reject")
     matches.potential = matches.potential.filter((matchOptions) => {
-        if (matchOptions.numb === currentMatch.numb) {
+        if (matchOptions.id.value === currentMatch.id.value) {
             return false
         } else { return true }
     })
@@ -76,3 +86,4 @@ function closeNav() {
 }
 
 
+})
