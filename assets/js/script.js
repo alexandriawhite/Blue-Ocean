@@ -135,6 +135,7 @@ $("#hobbiesForm").submit(e => {
     });
     // TODO: save hobbie array to user object using dot notation
     console.log({ user });
+    window.location.href ="./profile.html";
 });
 
 //displaying signup form 
@@ -233,8 +234,8 @@ $.ajax({
                 women.push(value)
             }
         })
-        console.log(men);
-        console.log(women);
+        // console.log(men);
+        // console.log(women);
     }
 });
 cancel?.addEventListener("click", closeLogin)
@@ -272,31 +273,26 @@ function loginUser() {
     console.log("logging in")
 	let username = document.getElementById('username').value;
 	let password = document.getElementById('password').value;
-    let loginAttempt = {
-		username: username,
-		password: password
-    }
-    console.log(username)
-    console.log(password)
-    console.log(loginAttempt)
+    // let loginAttempt = {
+	// 	username: username,
+	// 	password: password
+    // }
 
     try {
         for(var i = 0; i < userGroup.length; i++) {
             // check to 
             if (username == userGroup[i].username && password == userGroup[i].password) {
-                console.log(username + ' logged in');
                 throw new error("login accepted")
                 // break;
             } 
             else {
                 // error if username and password don't match
-                console.log('incorrect username or password');
+                // console.log('incorrect username or password');
                 
             }
         }
     }
     catch {
-        console.log("changing page")
         window.location.href ="./profile.html";
     }
 };
@@ -315,28 +311,27 @@ function createUser() {
             // check if new username is equal to any already created usernames
             if (newUsername == userGroup[i].username) {
                 // text prompt that username is taken
-                $('#nameTaken').show();
-                console.log("bad username")   
+                $('#nameTaken').show();   
                 break;
             } 
              else if (newPassword.length < 8) {
                 // show invalid
                 $('#invalidPassword').show();
-                console.log("bad password")
                 break;
             }; 
             // var emailAuth = new ZeroBounceApi(apiKey)
             var emailInput = $('#newEmail').val()//changes .value to .val()
-            console.log({emailInput});
+
             var result= emailAuth.validate(emailInput);
-            console.log({result})
-            if(result === "alias_address" || result === "leading_period_removed") {
-                console.log("valid");
-            }else {
-            $('emailInvalid').show();
+            // if(result === "alias_address" || result === "leading_period_removed") {
+                if(result == "valid") {
+                alert("Your email is valid.")    
+            }
+            else if (result == "invalid") {
+            $('#emailInvalid').show();
             break;
             };
-            throw new error(" profile created")
+            throw new error("profile created")
         }
             
     }
@@ -347,7 +342,6 @@ function createUser() {
 		password: newPassword
 	};
         userGroup.push(newUser);
-        console.log(userGroup);
         userHobbies();
     }
 }
