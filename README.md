@@ -45,7 +45,7 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 > * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Screenshot  
-![title](./assets/)
+![Blue Ocean](./assets/images/BO-SS.png)
 
 ## Credit
 #### Group project created by:
