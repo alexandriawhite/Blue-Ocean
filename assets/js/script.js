@@ -234,7 +234,7 @@ let closeLogin = function () {
 //email validation api needs to be called, input an if statement about if the validation is good or bad.//
 // Use eventlistenercd .. or an onclick to load when you tell it to.//
 $.ajax({
-    url: 'https://randomuser.me/api/?results=10',
+    url: 'https://randomuser.me/api/?results=10&seed=207f2c5bb4388564',
     dataType: 'json',
     success: function(data) {
         $.each(data.results, function(key,value){
