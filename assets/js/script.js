@@ -10,6 +10,7 @@ let loginScreen = document.querySelector(".loginScreen");
 let profile = document.querySelector("#profile");
 let matches = document.querySelector("#matches");
 let settings = document.querySelector("#settings");
+let settingss = document.querySelector("#settingss");
 let profileSection = document.querySelector(".profile");
 let matchesSection = document.querySelector(".matches");
 let settingsSection = document.querySelector(".settings");
@@ -19,11 +20,11 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
+
 let loginBtn = $("#loginBtn")
 let register
-const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 
-
+const hobbieList = [  "hiking","football","baseball","soccer","hockey","lacross","wrestling","golf","basketball","boxing","cycling","bowling","swimming","climbing","gymnastics","dance","cheer"]
 
 
 
@@ -45,19 +46,7 @@ function userInfo (){
     info.append(info);
 }*/
 
-//Dating location
-function callback(data) {
-    state.innerHTML = data.state;
-    city.innerHTML = data.city;
-}
-
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://geolocation-db.com/json/geoip.php?jsonp=callback';
-var h = document.getElementsByTagName('script')[0];
-h.parentNode.insertBefore(script, h);
-
-
+//Opens side nav bar
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
     signupForm.classList.add("hide");
@@ -68,6 +57,7 @@ function openNav() {
     settingsSection.classList.add("userSettings");
 }
 
+//Closes side nav bar
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
@@ -80,6 +70,7 @@ $('#signupForm').submit(function (e) {
 
 })
 
+//function for hobbies
 function hobbiesElement(hobbie) {
     var hobbieElement = `<div>
 <input type="checkbox" class="hobbieInput" name=${hobbie} value=${hobbie} />
@@ -128,6 +119,7 @@ function appendHobbies() {
         $("#hobbiesList").append(hobbiesElement(hobbies[i]))
     }
 }
+//Running hobbies
 appendHobbies();
 
 /*Hobbies submit button*/
@@ -139,7 +131,7 @@ $("#hobbiesForm").submit(e => {
     //Save array to user profile
     var userHobbies = [];
     $("input:checked").each(function () {
-        
+
         console.log($(this).val())
         // TODO:  userHobbies.push($(this).attr('name'));
     });
@@ -147,34 +139,7 @@ $("#hobbiesForm").submit(e => {
     console.log({ user });
 });
 
-//Example from weather app 
-// function setLocalStorage(city) {
-//     if (localStorage.getItem(searchKey) !== null){
-//     let cities = localStorage.getItem(searchKey)
-//     let citiesSearches = JSON.parse(cities)
-//     citiesSearches.push(city);
-//     localStorage.setItem(searchKey, JSON.stringify(citiesSearches));
-//     } else {
-//     let searches = []
-//     searches.push(city);
-//     localStorage.setItem(searchKey, JSON.stringify(searches));
-// }}
-
-// function formTemplate () {
-//     // create template later 
-//     `    <div class="field">
-//       <label class="label">Username</label>
-//       <div class="control has-icons-left has-icons-right">
-//         <input class="input" type="text" placeholder="Username Input" value="">
-//         <span class="icon is-small is-left">
-//           <i class="fas fa-user"></i>
-//         </span>
-//         <span class="icon is-small is-right">
-//           <i class="fas fa-check"></i>
-//         </span>
-//       </div>`
-// }
-
+//displaying signup form 
 function generateForm() {
     form.classList.remove("hide");
     hobbiesForm.classList.add("hideform");
@@ -184,7 +149,7 @@ function generateForm() {
     settingsSection.classList.add("userSettings");
 }
 
-
+//displaying userHobbies
 var userHobbies = function () {
     signupForm.classList.add("hide");
     hobbiesForm.classList.remove("hideform");
@@ -237,7 +202,6 @@ let userSettings = function () {
     closeNav();
 }
 
-
 //Profile picture function
 var loadFile = function (event) {
     var image = document.getElementById("output");
@@ -259,28 +223,26 @@ let closeLogin = function () {
 //email validation api needs to be called, input an if statement about if the validation is good or bad.//
 // Use eventlistenercd .. or an onclick to load when you tell it to.//
 $.ajax({
-    url: 'https://randomuser.me/api/?results=10',
+    url: 'https://randomuser.me/api/?results=10&seed=207f2c5bb4388564',
     dataType: 'json',
-    success: function(data) {
-        $.each(data.results, function(key,value){
-            let randomHobbies= Math.floor(Math.random() * hobbieList.length);
+    success: function (data) {
+        $.each(data.results, function (key, value) {
+            let randomHobbies = Math.floor(Math.random() * hobbieList.length);
             value['hobbies'] = hobbieList[randomHobbies];
-            if(value.gender=== "male") {
+            if (value.gender === "male") {
                 men.push(value)
             } else {
                 women.push(value)
             }
         })
-      console.log(men);
-      console.log(women);
+        console.log(men);
+        console.log(women);
     }
-  });
+});
 cancel.addEventListener("click", closeLogin)
-
 profile.addEventListener("click", userProfile)
 matches.addEventListener("click", userMatches)
 settings.addEventListener("click", userSettings)
-
 login.addEventListener("click", userLogin);
 
 // Add event listener to search button
