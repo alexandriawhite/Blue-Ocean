@@ -10,6 +10,7 @@ let loginScreen = document.querySelector(".loginScreen");
 let profile = document.querySelector("#profile");
 let matches = document.querySelector("#matches");
 let settings = document.querySelector("#settings");
+let settingss = document.querySelector("#settingss");
 let profileSection = document.querySelector(".profile");
 let matchesSection = document.querySelector(".matches");
 let settingsSection = document.querySelector(".settings");
@@ -19,7 +20,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
-const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
+const hobbieList = ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 
 
 
@@ -43,17 +44,8 @@ function userInfo (){
     info.append(info);
 }*/
 
-//Dating location
-function callback(data) {
-    state.innerHTML = data.state;
-    city.innerHTML = data.city;
-}
 
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://geolocation-db.com/json/geoip.php?jsonp=callback';
-var h = document.getElementsByTagName('script')[0];
-h.parentNode.insertBefore(script, h);
+
 
 
 function openNav() {
@@ -136,7 +128,7 @@ $("#hobbiesForm").submit(e => {
     //Save array to user profile
     var userHobbies = [];
     $("input:checked").each(function () {
-        
+
         console.log($(this).val())
         // TODO:  userHobbies.push($(this).attr('name'));
     });
@@ -258,26 +250,24 @@ let closeLogin = function () {
 $.ajax({
     url: 'https://randomuser.me/api/?results=10',
     dataType: 'json',
-    success: function(data) {
-        $.each(data.results, function(key,value){
-            let randomHobbies= Math.floor(Math.random() * hobbieList.length);
+    success: function (data) {
+        $.each(data.results, function (key, value) {
+            let randomHobbies = Math.floor(Math.random() * hobbieList.length);
             value['hobbies'] = hobbieList[randomHobbies];
-            if(value.gender=== "male") {
+            if (value.gender === "male") {
                 men.push(value)
             } else {
                 women.push(value)
             }
         })
-      console.log(men);
-      console.log(women);
+        console.log(men);
+        console.log(women);
     }
-  });
+});
 cancel.addEventListener("click", closeLogin)
-
 profile.addEventListener("click", userProfile)
 matches.addEventListener("click", userMatches)
 settings.addEventListener("click", userSettings)
-
 login.addEventListener("click", userLogin);
 
 // Add event listener to search button

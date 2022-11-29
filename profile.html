@@ -15,6 +15,16 @@
     </head>
 
     <body>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="./index.html">🏠</a>
+                <a id="profile" href="./profile.html">Profile</a>
+                <a id="matches" href="./matches.html">Matches</a>
+                <a id="settings" href="./settings.html">Settings</a>
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <!--User Profile Section-->
         <article class="tile is-child box profile">
             <div>
@@ -36,6 +46,7 @@
                 <button class="saveProfile" type="submit">Save</button>
         </article>
         <!-- <script src="./assets/js/script.js"></script> -->
+        <script src="./assets/js/profile.js"></script>
         <script src="./assets/js/queue.js"></script>
         <script src="./assets/js/script.js"></script>
     </body>
