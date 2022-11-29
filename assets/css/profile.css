@@ -15,3 +15,25 @@ img {
     padding:0;
     align-items: center;
 }
+
+.name, .job, .school {
+font-size: 16px;
+font-family: Arial, Helvetica, sans-serif;
+margin-right:80%;
+flex-wrap: wrap;
+}
+
+label {
+    font-size: 20px;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 10%;
+}
+
+.bio {
+    width: 80%;
+    height: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 10%;
+}
+
