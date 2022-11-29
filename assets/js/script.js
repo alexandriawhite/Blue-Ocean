@@ -66,8 +66,6 @@ function closeNav() {
 $('#signupForm').submit(function (e) {
     e.preventDefault();
     createUser()
-    // userHobbies();
-
 })
 
 //function for hobbies
@@ -303,6 +301,7 @@ function loginUser() {
     }
 };
 
+
 // register functionality
 function createUser() {
     
@@ -325,8 +324,19 @@ function createUser() {
                 $('#invalidPassword').show();
                 console.log("bad password")
                 break;
+            }; 
+            // var emailAuth = new ZeroBounceApi(apiKey)
+            var emailInput = $('#newEmail').val()//changes .value to .val()
+            console.log({emailInput});
+            var result= emailAuth.validate(emailInput);
+            console.log({result})
+            if(result === "alias_address" || result === "leading_period_removed") {
+                console.log("valid");
+            }else {
+            $('emailInvalid').show();
+            break;
             };
-           throw new error(" profile created")
+            throw new error(" profile created")
         }
             
     }
@@ -341,4 +351,3 @@ function createUser() {
         userHobbies();
     }
 }
-
