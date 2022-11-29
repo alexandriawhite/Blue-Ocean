@@ -10,7 +10,6 @@ let loginScreen = document.querySelector(".loginScreen");
 let profile = document.querySelector("#profile");
 let matches = document.querySelector("#matches");
 let settings = document.querySelector("#settings");
-let settingss = document.querySelector("#settingss");
 let profileSection = document.querySelector(".profile");
 let matchesSection = document.querySelector(".matches");
 let settingsSection = document.querySelector(".settings");
@@ -52,9 +51,6 @@ function openNav() {
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
 }
 
 //Closes side nav bar
@@ -144,9 +140,6 @@ function generateForm() {
     form.classList.remove("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
 }
 
 //displaying userHobbies
@@ -162,43 +155,31 @@ let userLogin = function () {
     signup.classList.add("navHideSignup")
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
 }
 
 //Displays user profile
 let userProfile = function () {
-    window.location.replace("./profile.html")
-    profileSection.classList.remove("userProfile");
+    window.location.replace("./displayprofile.html")
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
 
     closeNav();
 }
 //Displays user matches
 let userMatches = function () {
     window.location.replace("./matches.html")
-    matchesSection.classList.remove("userMatches");
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    settingsSection.classList.add("userSettings");
     closeNav();
 }
 //Displays user settings 
 let userSettings = function () {
-    window.location.replace("./settings.html")
-    settingsSection.classList.remove("userSettings");
+    window.location.replace("./profile.html")
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
     closeNav();
 }
 
@@ -216,9 +197,6 @@ let closeLogin = function () {
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
 }
 //email validation api needs to be called, input an if statement about if the validation is good or bad.//
 // Use eventlistenercd .. or an onclick to load when you tell it to.//
