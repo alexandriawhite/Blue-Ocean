@@ -1,9 +1,10 @@
+
 const users = [men, women]; //import dummy data
 console.log({ men, women });
 
 var matches = {
     potential: users[Math.floor(Math.random() * users.length)], //get prefernce from localuser
-    accepted: JSON.parse(localStorage.getItem("matches")) || [], rejected: [] 
+    accepted: JSON.parse(localStorage.getItem("matches")) || [], rejected: []
 }
 console.log({ matches })
 
@@ -15,8 +16,15 @@ function randomUser() {
 }
 
 function appendUser(user) {
-    console.log({ user });
-    $(`.userpic`).css(`background`, `url(${user.pic}) no-repeat center/80%`);
+    // Need forloop that runs twice 
+    // In that forloop grab two random likes from user
+    // compare those two likes to the current match likes
+        // Try to use currentMatch.hobbies.includes(user.like)   
+        // If does include go to user - if else skip to next user 
+    console.log({ user }); if (user) {
+        $(`.userpic`).css(`background`, `url(${user.pic}) no-repeat center/80%`);
+    }
+    else { alert("Out of matches") }
 }
 let currentMatch = randomUser();
 
@@ -59,4 +67,12 @@ $(`.reject`).click(() => {
 })
 
 
-//do index of and splice out the current user from potential 
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
+
