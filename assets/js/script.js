@@ -20,10 +20,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
-const hobbieList = ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
-
-
-
+const hobbieList = [  "hiking","football","baseball","soccer","hockey","lacross","wrestling","golf","basketball","boxing","cycling","bowling","swimming","climbing","gymnastics","dance","cheer"]
 
 
 /*404 error
@@ -44,10 +41,7 @@ function userInfo (){
     info.append(info);
 }*/
 
-
-
-
-
+//Opens side nav bar
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
     signupForm.classList.add("hide");
@@ -58,6 +52,7 @@ function openNav() {
     settingsSection.classList.add("userSettings");
 }
 
+//Closes side nav bar
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
@@ -69,6 +64,7 @@ $('#signupForm').submit(function (e) {
 
 })
 
+//function for hobbies
 function hobbiesElement(hobbie) {
     var hobbieElement = `<div>
 <input type="checkbox" class="hobbieInput" name=${hobbie} value=${hobbie} />
@@ -117,6 +113,7 @@ function appendHobbies() {
         $("#hobbiesList").append(hobbiesElement(hobbies[i]))
     }
 }
+//Running hobbies
 appendHobbies();
 
 /*Hobbies submit button*/
@@ -136,34 +133,7 @@ $("#hobbiesForm").submit(e => {
     console.log({ user });
 });
 
-//Example from weather app 
-// function setLocalStorage(city) {
-//     if (localStorage.getItem(searchKey) !== null){
-//     let cities = localStorage.getItem(searchKey)
-//     let citiesSearches = JSON.parse(cities)
-//     citiesSearches.push(city);
-//     localStorage.setItem(searchKey, JSON.stringify(citiesSearches));
-//     } else {
-//     let searches = []
-//     searches.push(city);
-//     localStorage.setItem(searchKey, JSON.stringify(searches));
-// }}
-
-// function formTemplate () {
-//     // create template later 
-//     `    <div class="field">
-//       <label class="label">Username</label>
-//       <div class="control has-icons-left has-icons-right">
-//         <input class="input" type="text" placeholder="Username Input" value="">
-//         <span class="icon is-small is-left">
-//           <i class="fas fa-user"></i>
-//         </span>
-//         <span class="icon is-small is-right">
-//           <i class="fas fa-check"></i>
-//         </span>
-//       </div>`
-// }
-
+//displaying signup form 
 function generateForm() {
     form.classList.remove("hide");
     hobbiesForm.classList.add("hideform");
@@ -173,7 +143,7 @@ function generateForm() {
     settingsSection.classList.add("userSettings");
 }
 
-
+//displaying userHobbies
 var userHobbies = function () {
     signupForm.classList.add("hide");
     hobbiesForm.classList.remove("hideform");
@@ -225,7 +195,6 @@ let userSettings = function () {
     matchesSection.classList.add("userMatches");
     closeNav();
 }
-
 
 //Profile picture function
 var loadFile = function (event) {
