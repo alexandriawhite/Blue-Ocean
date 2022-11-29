@@ -14,6 +14,9 @@ function callback(data) {
 // Need to add hobbies in here 
 // Check if hobbies exist, if they do - set new item 
 // Appending user profile to local storage 
+//if (localStorage.getItem(blueOceanUserProfile) !== null)//{
+// append only new data - Still need to write this
+//} else {
 $(".saveProfile").click(()=> {
     let userProfile = {
         pic: $("#file").val(),
