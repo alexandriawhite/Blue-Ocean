@@ -201,6 +201,17 @@ let userSettings = function () {
     closeNav();
 }
 
+let userQueue = function() {
+    window.location.replace("./matchQueue.html")
+    settingsSection.classList.remove("userQueue");
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
+    closeNav();
+}
+
 //Profile picture function
 var loadFile = function (event) {
     var image = document.getElementById("output");
@@ -243,6 +254,7 @@ profile.addEventListener("click", userProfile)
 matches.addEventListener("click", userMatches)
 settings.addEventListener("click", userSettings)
 login?.addEventListener("click", userLogin);
+matchQueue.addEventListener("click", userQueue);
 
 // Add event listener to search button
 signup?.addEventListener("click", generateForm);
