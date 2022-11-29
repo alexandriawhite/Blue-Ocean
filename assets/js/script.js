@@ -49,12 +49,12 @@ function userInfo (){
 //Opens side nav bar
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
-    signupForm.classList.add("hide");
-    hobbiesForm.classList.add("hideform");
-    loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
+    signupForm?.classList.add("hide");
+    hobbiesForm?.classList.add("hideform");
+    loginScreen?.classList.add("loginScreen");
+    profileSection?.classList.add("userProfile");
+    matchesSection?.classList.add("userMatches");
+    settingsSection?.classList.add("userSettings");
 }
 
 //Closes side nav bar
@@ -144,9 +144,9 @@ function generateForm() {
     form.classList.remove("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
+    profileSection?.classList.add("userProfile");
+    matchesSection?.classList.add("userMatches");
+    settingsSection?.classList.add("userSettings");
 }
 
 //displaying userHobbies
@@ -162,9 +162,9 @@ let userLogin = function () {
     signup.classList.add("navHideSignup")
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    settingsSection.classList.add("userSettings");
+    profileSection?.classList.add("userProfile");
+    matchesSection?.classList.add("userMatches");
+    settingsSection?.classList.add("userSettings");
 }
 
 //Displays user profile
@@ -239,14 +239,14 @@ $.ajax({
         console.log(women);
     }
 });
-cancel.addEventListener("click", closeLogin)
+cancel?.addEventListener("click", closeLogin)
 profile.addEventListener("click", userProfile)
 matches.addEventListener("click", userMatches)
 settings.addEventListener("click", userSettings)
-login.addEventListener("click", userLogin);
+login?.addEventListener("click", userLogin);
 
 // Add event listener to search button
-signup.addEventListener("click", generateForm);
+signup?.addEventListener("click", generateForm);
 
 // Create a registration system
 var userGroup = [
