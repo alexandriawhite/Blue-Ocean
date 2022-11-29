@@ -27,25 +27,27 @@
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <!--User Profile Section-->
-        <article class="tile is-child box profile aprofile">
-            <div>
-                <h1>Profile</h1>
-                <div class="profile-pic">
-                    <img src="./assets/images/profileimg.jpg" id="output" width="200" />
-                    <input id="file" type="file" onchange="loadFile(event)" />
-                </div>
-                <label>First Name: </label>
-                <input class="name" type="text" placeholder="Enter Name" name="name" required>
-                <label>Bio: </label>
-                <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
-                <label class="location">Dating in: </label>
-                <div><span id="city"></span>, <span id="state"></span></div>
-                <label>Job: </label>
-                <input class="job" type="text" placeholder="Enter job">
-                <label>School: </label>
-                <input class="school" type="text" placeholder="Enter school">
-                <button class="saveProfile" type="submit">Save</button>
-        </article>
+        <div class="tile is-10 is-parent is-vertical center-content">
+            <article class="tile is-child box profile aprofile">
+                <div>
+                    <h1>Profile</h1>
+                    <div class="profile-pic">
+                        <img src="./assets/images/profileimg.jpg" id="output" width="200" />
+                        <input id="file" type="file" onchange="loadFile(event)" />
+                    </div>
+                    <label>First Name: </label>
+                    <input class="name" type="text" placeholder="Enter Name" name="name" required>
+                    <label>Bio: </label>
+                    <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
+                    <label class="location">Dating in: </label>
+                    <div><span id="city"></span>, <span id="state"></span></div>
+                    <label>Job: </label>
+                    <input class="job" type="text" placeholder="Enter job">
+                    <label>School: </label>
+                    <input class="school" type="text" placeholder="Enter school">
+                    <button class="saveProfile" type="submit">Save</button>
+            </article>
+        </div>
         <!-- <script src="./assets/js/script.js"></script> -->
         <script src="./assets/js/profile.js"></script>
         <script src="./assets/js/queue.js"></script>
