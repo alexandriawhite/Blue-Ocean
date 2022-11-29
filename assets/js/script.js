@@ -19,6 +19,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
+let loginBtn = $("#loginBtn")
 let register
 const hobbieList= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
 
@@ -75,7 +76,7 @@ function closeNav() {
 $('#signupForm').submit(function (e) {
     e.preventDefault();
     createUser()
-    userHobbies();
+    // userHobbies();
 
 })
 
@@ -301,66 +302,78 @@ var userGroup = [
 	}
 ]
 
+$("#loginForm").submit(function (e) {
+    e.preventDefault();
+    loginUser();
+})
+
 // login
-function userlogin() {
+function loginUser() {
+    console.log("logging in")
 	let username = document.getElementById('username').value;
 	let password = document.getElementById('password').value;
+    let loginAttempt = {
+		username: username,
+		password: password
+    }
+    console.log(username)
+    console.log(password)
+    console.log(loginAttempt)
 
-	for(var i = 0; i < userGroup.length; i++) {
-		// check to 
-		if(username == userGroup[i].username && password == userGroup[i].password) {
-			console.log(username + ' logged in');
-			break;
-		} else {
-			// error if username and password don't match
-			console.log('incorrect username or password');
-		}
-	}
+    try {
+        for(var i = 0; i < userGroup.length; i++) {
+            // check to 
+            if (username == userGroup[i].username && password == userGroup[i].password) {
+                console.log(username + ' logged in');
+                throw new error("login accepted")
+                // break;
+            } 
+            else {
+                // error if username and password don't match
+                console.log('incorrect username or password');
+                
+            }
+        }
+    }
+    catch {
+        console.log("changing page")
+        window.location.href ="./profile.html";
+    }
 };
 
 // register functionality
 function createUser() {
+    
 	let newUsername = document.getElementById('newUsername').value;
 	let newPassword = document.getElementById('newPassword').value;
 	// store new user data in newUser object so i can push the object into userGroup
-	let newUser = {
-		username: newUsername,
-		password: newPassword
-	};
+	
     try {
         // loop through userGroup array to see if the username is taken, or password to short
         for(var i = 0; i < userGroup.length; i++) {
             // check if new username is equal to any already created usernames
-            if(newUsername == userGroup[i].username) {
+            if (newUsername == userGroup[i].username) {
                 // text prompt that username is taken
                 $('#nameTaken').show();
-                console.log("bad username")
-                throw new Error("Missing Parameters")
-                
+                console.log("bad username")   
+                break;
             } 
-            // else if (newPassword.length < 8) {
-            // 	// show invalid
-            // 	$('#invalidPassword').show();
-            //     console.log("bad password")
-            //     break;
-                
-            // }
-            // else {
-            //     $('#nameTaken').hide();
-            //     $('#invalidPassword').hide();
-            //     console.log("passed")
-            // }
-        };
-        if (newPassword.length < 8) {
+             else if (newPassword.length < 8) {
                 // show invalid
-                
                 $('#invalidPassword').show();
                 console.log("bad password")
-                throw new Error("Missing Parameters")
+                break;
+            };
+           throw new error(" profile created")
         }
+            
     }
 	// push new object to the people array
     catch {
+        let newUser = {
+		username: newUsername,
+		password: newPassword
+	};
         userGroup.push(newUser);
         console.log(userGroup);
         userHobbies();

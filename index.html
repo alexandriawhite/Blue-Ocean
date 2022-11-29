@@ -56,7 +56,7 @@
                               <div class="field">
                                   <label class="label">Password</label>
                                   <div class="control has-icons-left">
-                                      <input id="newPassword" class="input" type="text" placeholder="Password Input">
+                                      <input id="newPassword" class="input" type="password" placeholder="Password Input">
                                       <p id="invalidPassword" class="red help hide">Password must at least 8 characters.</p>
                                   </div>
                               </div> 
@@ -102,15 +102,17 @@
                 </article>
                 <!--Login Section-->
                 <article class="tile is-child box loginScreen">
-                    <div>
-                        <label>Username: </label>
-                        <input class="userLogin" type="text" placeholder="Enter Username" name="username" required>
-                        <label>Password: </label>
-                        <input class="userLogin" type="password" placeholder="Enter Password" name="password" required>
-                        <button class="loginForm" type="submit">Login</button>
-                        <input type="checkbox" checked="checked"> Remember me
-                        <button type="button" class="cancelbtn"> Cancel</button>
-                </article>
+                    <form id="loginForm">
+                        <div>
+                            <label>Username: </label>
+                            <input id="username" class="userLogin" type="text" placeholder="Enter Username" name="username" required>
+                            <label>Password: </label>
+                            <input id="password" class="userLogin" type="password" placeholder="Enter Password" name="password" required>
+                            <button id="loginBtn" class="loginForm" type="submit">Login</button>
+                            <input type="checkbox" checked="checked"> Remember me
+                            <button type="submit" class="cancelbtn"> Cancel</button>
+                        </div>
+                    </form>
                 </article>
             </div>
         </section>
