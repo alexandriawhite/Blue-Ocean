@@ -11,12 +11,12 @@ h1 {
 }
 
 img, #file {
-    margin: 0 30%;
+    margin: 0 40%;
     padding:0;
     align-items: center;
 }
 
-.name, .job, .school {
+.name, .job, .school, .age {
 font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;
 margin-right:80%;
@@ -38,17 +38,36 @@ label {
     margin-right: 10%;
 }
 
-
-div {
+aside {
     margin: 5% 20%;
     background-color: white;
 }
 
 
-.bio, #city, #state, .age, .job, .school {
+.name, .bio, .age, .job, .school, .location, #cityState {
     margin:0 5%;
+    width:90%;
+}
 
-body {
-    background-color:rgb(197, 232, 244);
-    height: 100vh;
+#city {
+    margin: 0 .5% 0 5%;
+    color: black;
+}
+#state {
+    margin-left: .2%;
+    color:black
+}
+
+.saveProfile {
+    background-color:#00d1b2;
+    color:rgb(219, 218, 218);
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    line-height: 8px;
+    margin: 2% 88%;
+    width:80px;
 }

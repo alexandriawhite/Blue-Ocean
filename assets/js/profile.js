@@ -37,6 +37,9 @@ $(".saveProfile").click(() => {
 
 
 
+
+
+
 //Profile picture function
 var loadFile = function (event) {
     var image = document.getElementById("output");

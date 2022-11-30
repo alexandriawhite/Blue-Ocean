@@ -29,25 +29,24 @@
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <!--User Profile Section-->
         <aside class="profile-card">
-            <div class="">
+            <div>
                 <article class="">
                     <h1>Update Profile</h1>
                     <div>
                         <img src="./assets/images/profileimg.jpg" id="output" width="200" />
-                        <input id="file" type="file" onchange="loadFile(event)" />
-                    
-                    <label>First Name: </label>
-                    <input class="name" type="text" placeholder="Enter Name" name="name" required>
-                    <label>Bio: </label>
-                    <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
+                        <input id="file" type="file" onchange="loadFile(event)" /><br>
                     <label class="location">Dating in: </label>
-                    <div><span id="city"></span>, <span id="state"></span></div>
-                    <label>Age:</label>
-                    <input class="age" type="text" class="age">
-                    <label>Job: </label>
-                    <input class="job" type="text" placeholder="Enter job">
-                    <label>School: </label>
-                    <input class="school" type="text" placeholder="Enter school">
+                    <a class="cityState"><span id="city"></span>, <span id="state"></span></a><br>
+                    <label id="name">Name: </label>
+                    <input class="name" type="text" placeholder="Enter Name" name="name" required><br>
+                    <label id="bio">Bio: </label><br>
+                    <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required><br>
+                    <label id="age">Age:</label>
+                    <input class="age" type="text" placeholder="Age"><br>
+                    <label id="job">Job: </label>
+                    <input class="job" type="text" placeholder="Enter job"><br>
+                    <label id="school">School: </label>
+                    <input class="school" type="text" placeholder="Enter school"><br>
                     <button class="saveProfile appendBio" type="submit">Save</button>
                 </div>
                 </article>
