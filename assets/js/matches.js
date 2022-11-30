@@ -63,7 +63,7 @@ $(`.match`).click(() => {
     appendUser(currentMatch);
     localStorage.setItem("matches", JSON.stringify(matches.accepted))
     matchCount++
-    document.getElementById('Accept').textContent = "Accept: " + matchCount;
+    document.getElementById('Accept').textContent = "Match: " + matchCount;
 })
 let rejectCount = 0
 
@@ -97,9 +97,9 @@ function closeNav() {
 var matchArray = []
 matchArray = JSON.parse(localStorage.getItem("matches"));
 function matchEl(listMatch) {
-    var matchElement = `<img src=${listMatch.picture?.large}></img>
+    var matchElement = `<img src=${listMatch.picture?.large} id=listPic></img>
     <div class="usercontent">
-        <h2 class="firstName">${listMatch.name.first}<h2>
+        <h4 class="firstName">${listMatch.name.first}<h2>
         <h4 class="username">${listMatch.login.username}</h4>
         <p class="age">${listMatch.dob.age}</p>
         <p class="sports">${listMatch.hobbies}</p>

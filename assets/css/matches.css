@@ -1,8 +1,59 @@
 .userpic {
+    justify-content: center;
     height: 300px;
     content:"";
     width:250px;
+    border-style:solid;
+    margin: 2% auto 2% 43%;
+    
     /*background-size:cover;
     background-repeat: no-repeat;*/
 }
+#Accept,
+#Reject {
+    display:flex;
+    font-weight: bolder;
+    justify-content: space-between;
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#Accept{
+    margin-left: 0%;
+}
+#Reject{
+    margin-left: 75px
+}
 
+#sessionTally {
+    display: flex;
+    justify-content: center;
+    margin: 15 15 15 15;
+}
+.reject,
+.match {
+    width: 6%;
+}
+.match {
+    margin-left: 44%;
+}
+#article {
+    align-items: center;
+}
+
+.usercontent{
+    
+}
+.firstName {
+    font-size: 30px;
+    margin-left:0%;
+}
+
+#listPic {
+    display:flex;
+    justify-content: start;
+}
+#matchList {
+    display:flex;
+    align-items: start;
+    flex-direction: column;
+}
