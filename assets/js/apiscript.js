@@ -1,28 +1,26 @@
-const hobbies= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
-
-$.ajax({
-    url: 'https://randomuser.me/api/?results=10',
+function fetchRandomUsers() {
+    const hobbies= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
+    var datingPool = {men:[], women:[]};
+    
+return $.ajax({
+    url: 'https://randomuser.me/api/?results=30',
     dataType: 'json',
     success: function(data) {
-        $.each(data.results, function(key,value){
-            console.log(key);
-            console.log(value.name.title);
+        return $.each(data.results, function(key,value){
             let randomHobbies= Math.floor(Math.random() * hobbies.length);
             value['hobbies']=hobbies[randomHobbies];
             if(value.gender=== "male") {
-                men.push(value)
+                datingPool.men.push(value)
             } else {
-                women.push(value)
+                datingPool.women.push(value)
             }
         })
-      console.log(men);
-      console.log(women);
     }
-  });
+  })
+}
 
-
-import this script into HTML file, this needs to run first 
-2nd script file, you'll pass the user email through this objects method
+// import this script into HTML file, this needs to run first 
+// 2nd script file, you'll pass the user email through this objects method
 
 var apiKey= "7eaf03a186b541c9a59a953deb840f9a";
 
@@ -52,7 +50,6 @@ class ZeroBounceApi {
             get.open('GET', uri, false);
             get.send();
             if (get.readyState == 4 && get.status == 200) {
-                console.log(get.responseText);
                 var responseObj= get.responseText;
                 return JSON.parse(responseObj).status;
             }
@@ -64,4 +61,3 @@ var emailAuth = new ZeroBounceApi(apiKey)
 // ZeroBounceApi.apiKey
 // ZeroBounceApi.getCredits()
 var result= emailAuth.validate("global_suppression@example.com")
-console.log(result)

@@ -19,7 +19,7 @@ var city = document.getElementById('city');
 let signupForm = document.querySelector(".signupForm");
 let hobbiesForm = document.querySelector(".hideform");
 let form = document.querySelector(".hide");
-
+var modal = $("#modal")
 let loginBtn = $("#loginBtn")
 let register
 
@@ -62,8 +62,6 @@ function closeNav() {
 $('#signupForm').submit(function (e) {
     e.preventDefault();
     createUser()
-    // userHobbies();
-
 })
 
 //function for hobbies
@@ -133,6 +131,7 @@ $("#hobbiesForm").submit(e => {
     });
     // TODO: save hobbie array to user object using dot notation
     console.log({ user });
+    window.location.href ="./profile.html";
 });
 
 //displaying signup form 
@@ -183,6 +182,26 @@ let userSettings = function () {
     closeNav();
 }
 
+let userQueue = function() {
+    window.location.replace("./matchQueue.html")
+    settingsSection.classList.remove("userQueue");
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    closeNav();
+}
+
+let userQueue = function() {
+    window.location.replace("./matchQueue.html")
+    settingsSection.classList.remove("userQueue");
+    signupForm.classList.add("hide");
+    hobbiesForm.classList.add("hideform");
+    loginScreen.classList.add("loginScreen");
+    profileSection.classList.add("userProfile");
+    matchesSection.classList.add("userMatches");
+    closeNav();
+}
+
 //Profile picture function
 var loadFile = function (event) {
     var image = document.getElementById("output");
@@ -213,18 +232,19 @@ $.ajax({
                 women.push(value)
             }
         })
-        console.log(men);
-        console.log(women);
+        // console.log(men);
+        // console.log(women);
     }
 });
-cancel.addEventListener("click", closeLogin)
+cancel?.addEventListener("click", closeLogin)
 profile.addEventListener("click", userProfile)
 matches.addEventListener("click", userMatches)
 settings.addEventListener("click", userSettings)
-login.addEventListener("click", userLogin);
+login?.addEventListener("click", userLogin);
+matchQueue.addEventListener("click", userQueue);
 
 // Add event listener to search button
-signup.addEventListener("click", generateForm);
+signup?.addEventListener("click", generateForm);
 
 // Create a registration system
 var userGroup = [
@@ -252,34 +272,30 @@ function loginUser() {
     console.log("logging in")
 	let username = document.getElementById('username').value;
 	let password = document.getElementById('password').value;
-    let loginAttempt = {
-		username: username,
-		password: password
-    }
-    console.log(username)
-    console.log(password)
-    console.log(loginAttempt)
+    // let loginAttempt = {
+	// 	username: username,
+	// 	password: password
+    // }
 
     try {
         for(var i = 0; i < userGroup.length; i++) {
             // check to 
             if (username == userGroup[i].username && password == userGroup[i].password) {
-                console.log(username + ' logged in');
                 throw new error("login accepted")
                 // break;
             } 
             else {
                 // error if username and password don't match
-                console.log('incorrect username or password');
+                // console.log('incorrect username or password');
                 
             }
         }
     }
     catch {
-        console.log("changing page")
         window.location.href ="./profile.html";
     }
 };
+
 
 // register functionality
 function createUser() {
@@ -294,17 +310,28 @@ function createUser() {
             // check if new username is equal to any already created usernames
             if (newUsername == userGroup[i].username) {
                 // text prompt that username is taken
-                $('#nameTaken').show();
-                console.log("bad username")   
+                $('#nameTaken').show();   
                 break;
             } 
              else if (newPassword.length < 8) {
                 // show invalid
                 $('#invalidPassword').show();
-                console.log("bad password")
                 break;
+            }; 
+            // var emailAuth = new ZeroBounceApi(apiKey)
+            var emailInput = $('#newEmail').val()//changes .value to .val()
+
+            var result= emailAuth.validate(emailInput);
+            // if(result === "alias_address" || result === "leading_period_removed") {
+                if(result == "valid") {
+                    console.log("is active")
+                 
+            }
+            else if (result == "invalid") {
+                $('#emailInvalid').show();
+            break;
             };
-           throw new error(" profile created")
+            throw new error("profile created")
         }
             
     }
@@ -314,9 +341,35 @@ function createUser() {
 		username: newUsername,
 		password: newPassword
 	};
+        openModal();
         userGroup.push(newUser);
-        console.log(userGroup);
         userHobbies();
     }
 }
 
+    // Functions to open and close a modal
+    function openModal() {
+      document.getElementById("modal").classList.add("is-active")
+    }
+  
+    function closeModal() {
+        document.getElementById("modal").classList.remove("is-active")
+    }
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      const e = event || window.event;
+  
+      if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+      }
+    });

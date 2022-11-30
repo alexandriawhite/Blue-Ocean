@@ -1,10 +1,19 @@
+fetchRandomUsers().then((data)=> {
+    var datingPool = data.results;
+    console.log({datingPool});
 
 const users = [men, women]; //import dummy data
 console.log({ men, women });
 
+var genderFilter = 'male';
+var filteredPool = datingPool.filter((person) => {
+    return person.gender === genderFilter;
+});
+
 var matches = {
-    potential: users[Math.floor(Math.random() * users.length)], //get prefernce from localuser
-    accepted: JSON.parse(localStorage.getItem("matches")) || [], rejected: []
+    potential: filteredPool, //get prefernce from localuser
+    accepted: JSON.parse(localStorage.getItem("matches")) || [], 
+    rejected: []
 }
 console.log({ matches })
 
@@ -21,8 +30,9 @@ function appendUser(user) {
     // compare those two likes to the current match likes
         // Try to use currentMatch.hobbies.includes(user.like)   
         // If does include go to user - if else skip to next user 
-    console.log({ user }); if (user) {
-        $(`.userpic`).css(`background`, `url(${user.pic}) no-repeat center/80%`);
+    console.log({ user }); 
+    if (user) {
+        $(`.userpic`).css(`background`, `url(${user.picture.large}) no-repeat center/80%`);
     }
     else { alert("Out of matches") }
 }
@@ -37,12 +47,13 @@ appendUser(currentMatch);
 // When they login - clear out the matches and start over 
 // Will add authenticiation when we are able to use servers (this is what it will look like when logging in and out)
 
+let matchCount = 0
 
 
 $(`.match`).click(() => {
     console.log("accept");
     matches.potential = matches.potential.filter((matchOptions) => {
-        if (matchOptions.numb === currentMatch.numb) {
+        if (matchOptions.id.value === currentMatch.id.value) {
             return false
         } else { return true }
     })
@@ -51,12 +62,15 @@ $(`.match`).click(() => {
     currentMatch = randomUser();
     appendUser(currentMatch);
     localStorage.setItem("matches", JSON.stringify(matches.accepted))
+    matchCount++
+    document.getElementById('Accept').textContent = "Accept: " + matchCount;
 })
+let rejectCount = 0
 
 $(`.reject`).click(() => {
     console.log("reject")
     matches.potential = matches.potential.filter((matchOptions) => {
-        if (matchOptions.numb === currentMatch.numb) {
+        if (matchOptions.id.value === currentMatch.id.value) {
             return false
         } else { return true }
     })
@@ -64,6 +78,9 @@ $(`.reject`).click(() => {
     console.log(matches)
     currentMatch = randomUser();
     appendUser(currentMatch);
+    rejectCount++
+    console.log(rejectCount)
+    document.getElementById('Reject').textContent = "Reject: " + rejectCount;
 })
 
 
@@ -76,3 +93,35 @@ function closeNav() {
 }
 
 
+})
+var matchArray = []
+matchArray = JSON.parse(localStorage.getItem("matches"));
+function matchEl(listMatch) {
+    var matchElement = `<img src=${listMatch.picture.large}></img>
+    <div class="usercontent">
+        <h2 class="firstName">${listMatch.name.first}<h2>
+        <h4 class="username">${listMatch.login.username}</h4>
+        <p class="age">${listMatch.dob.age}</p>
+        <p class="sports">${listMatch.hobbies}</p>
+        <p class="creativity"></p>
+    </div><br/>`;
+    return matchElement;
+}
+function buildTable(matchArray) {
+    console.log("Entering Method");
+    var divList = "";
+    for (let i = 0; i < matchArray.length; i++){
+        $("#matchList").append(matchEl(matchArray[i]));
+      }
+      console.log(matchArray)
+    //   document.getElementById('matchList').textContent = divList;
+}
+buildTable(matchArray);
+/* <div class="userpic"></div>
+<div class="usercontent">
+    <h4 class="username"></h4>
+    <p class="age"></p>
+    <p class="sports"></p>
+    <p class="creativity"></p>
+</div> */
+// $("#hobbiesList").append(hobbiesElement(hobbies[i]))
