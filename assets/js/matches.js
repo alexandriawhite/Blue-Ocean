@@ -71,14 +71,6 @@ fetchRandomUsers().then((data) => {
     let currentMatch = randomUser();
 
     appendUser(currentMatch);
-<<<<<<< HEAD
-=======
-    localStorage.setItem("matches", JSON.stringify(matches.accepted))
-    matchCount++
-    document.getElementById('Accept').textContent = "Match: " + matchCount;
-})
-let rejectCount = 0
->>>>>>> f0e84e15629e327ae39b0c43534203d1a7c7039b
 
     // Add a search local storage function to look for matches already logged
     // Add to the list if there are already people there: Done

@@ -180,23 +180,23 @@ let userSettings = function () {
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
     //if (localStorage.getItem("blueOceanUserProfile") !== null){
-    let bio = localStorage.getItem("blueOceanUserProfile");
-         let fullBio = JSON.parse(bio)
-         let name = fullBio.name
-         let location = fullBio.location
-         let age = fullBio.age
-         let job = fullBio.job
-         let school = fullBio.school
-         let userBio = fullBio.bio
-         $('#name').text(name);
-         $('#age').text(age);
-         $('#job').text(job);
-         $('#school').text(school);
-         $('#userBio').text(userBio);
-     }
+    // let bio = localStorage.getItem("blueOceanUserProfile");
+    //      let fullBio = JSON.parse(bio)
+    //      let name = fullBio.name
+    //      let location = fullBio.location
+    //      let age = fullBio.age
+    //      let job = fullBio.job
+    //      let school = fullBio.school
+    //      let userBio = fullBio.bio
+    //      $('#name').text(name);
+    //      $('#age').text(age);
+    //      $('#job').text(job);
+    //      $('#school').text(school);
+    //      $('#userBio').text(userBio);
+    //  }
 
 
-    closeNav();
+     closeNav();
 }
 
 let userQueue = function() {
