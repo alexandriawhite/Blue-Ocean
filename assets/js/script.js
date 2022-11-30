@@ -23,7 +23,7 @@ var modal = $("#modal")
 let loginBtn = $("#loginBtn")
 let register
 
-const hobbieList = [  "hiking","football","baseball","soccer","hockey","lacross","wrestling","golf","basketball","boxing","cycling","bowling","swimming","climbing","gymnastics","dance","cheer"]
+const hobbieList = [  "hiking","football","baseball","soccer","hockey","lacrosse","wrestling","golf","basketball","boxing","cycling","bowling","swimming","climbing","gymnastics","dance","cheer"]
 
 
 
@@ -74,7 +74,7 @@ function hobbiesElement(hobbie) {
 }
 
 
-/* 
+/*
 const otherCheckbox = document.querySelector('#other');
 const otherText = document.querySelector('#otherValue');
 otherText.style.visibility = 'hidden';
@@ -134,7 +134,7 @@ $("#hobbiesForm").submit(e => {
     window.location.href ="./profile.html";
 });
 
-//displaying signup form 
+//displaying signup form
 function generateForm() {
     form.classList.remove("hide");
     hobbiesForm.classList.add("hideform");
@@ -173,7 +173,7 @@ let userMatches = function () {
     loginScreen.classList.add("loginScreen");
     closeNav();
 }
-//Displays user settings 
+//Displays user settings
 let userSettings = function () {
     window.location.replace("./profile.html")
     signupForm.classList.add("hide");
@@ -236,22 +236,6 @@ matchQueue.addEventListener("click", userQueue);
 // Add event listener to search button
 signup?.addEventListener("click", generateForm);
 
-// Create a registration system
-var userGroup = [
-	{
-		username: 'dalton',
-		password: 'admin'
-	},
-	{
-		username: 'alexandria',
-		password: 'admin'
-	},
-	{
-		username: 'maggie',
-		password: 'admin'
-	}
-]
-
 $("#loginForm").submit(function (e) {
     e.preventDefault();
     loginUser();
@@ -260,106 +244,107 @@ $("#loginForm").submit(function (e) {
 // login
 function loginUser() {
     console.log("logging in")
-	let username = document.getElementById('username').value;
-	let password = document.getElementById('password').value;
+    let username = $('#username').val();
+    let password = $('#password').val();
     // let loginAttempt = {
-	// 	username: username,
-	// 	password: password
+    // 	username: username,
+    // 	password: password
     // }
 
-    try {
-        for(var i = 0; i < userGroup.length; i++) {
-            // check to 
-            if (username == userGroup[i].username && password == userGroup[i].password) {
-                throw new error("login accepted")
-                // break;
-            } 
-            else {
-                // error if username and password don't match
-                // console.log('incorrect username or password');
-                
-            }
-        }
-    }
-    catch {
+    let users = getUsers();
+    if (users.findIndex(u => u.username === username && u.password === password) != -1) {
+        //User found and password correct
         window.location.href ="./profile.html";
+    } else {
+        // User was not found OR password was incorrect --please check your entry.
     }
 };
 
 
 // register functionality
 function createUser() {
-    
-	let newUsername = document.getElementById('newUsername').value;
-	let newPassword = document.getElementById('newPassword').value;
-	// store new user data in newUser object so i can push the object into userGroup
-	
-    try {
-        // loop through userGroup array to see if the username is taken, or password to short
-        for(var i = 0; i < userGroup.length; i++) {
-            // check if new username is equal to any already created usernames
-            if (newUsername == userGroup[i].username) {
-                // text prompt that username is taken
-                $('#nameTaken').show();   
-                break;
-            } 
-             else if (newPassword.length < 8) {
-                // show invalid
-                $('#invalidPassword').show();
-                break;
-            }; 
-            // var emailAuth = new ZeroBounceApi(apiKey)
-            var emailInput = $('#newEmail').val()//changes .value to .val()
+    let newUsername = $('#newUsername').val()
+    let newPassword = $('#newPassword').val()
+    let emailInput = $('#newEmail').val()
+    // let newUsername = document.getElementById('newUsername').value;
+    // let newPassword = document.getElementById('newPassword').value;
+    // store new user data in newUser object so i can push the object into userGroup
 
-            var result= emailAuth.validate(emailInput);
-            // if(result === "alias_address" || result === "leading_period_removed") {
-                if(result == "valid") {
-                    console.log("is active")
-                 
-            }
-            else if (result == "invalid") {
-                $('#emailInvalid').show();
-            break;
-            };
-            throw new error("profile created")
-        }
-            
+    let users = getUsers();
+    if (users.findIndex(u => u.username === newUsername) != -1) {
+        $('#nameTaken').show();
+        return;
+    } else if (newPassword.length < 8) {
+        $('#invalidPassword').show();
+        return;
     }
-	// push new object to the people array
-    catch {
+
+    let result= emailAuth.validate(emailInput);
+    if(result === "valid") {
         let newUser = {
-		username: newUsername,
-		password: newPassword
-	};
+            username: newUsername,
+            password: newPassword
+        };
         openModal();
-        userGroup.push(newUser);
+        addNewUser(newUser);
         userHobbies();
+    }
+    else if (result === "invalid") {
+        // Do something for invalid
+        $('#emailInvalid').show()
+        return;
     }
 }
 
-    // Functions to open and close a modal
-    function openModal() {
-      document.getElementById("modal").classList.add("is-active")
-    }
-  
-    function closeModal() {
-        document.getElementById("modal").classList.remove("is-active")
-    }
-  
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-      const $target = $close.closest('.modal');
-  
-      $close.addEventListener('click', () => {
+function addNewUser(user) {
+    let users = getUsers();
+    users.push(user);
+    let usersJson = JSON.stringify(users);
+    localStorage.setItem('Users', usersJson);
+}
+
+function getUsers() {
+    // Get the users --if they are not found seed an initial array or users
+    let usersJson = localStorage.getItem('Users') ?? `[
+        {
+            "username": "dalton",
+            "password": "admin"
+        },
+        {
+            "username": "alexandria",
+            "password": "admin"
+        },
+        {
+            "username": "maggie",
+            "password": "admin"
+        }
+        ]`;
+    return JSON.parse(usersJson);
+}
+
+// Functions to open and close a modal
+function openModal() {
+    document.getElementById("modal").classList.add("is-active")
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("is-active")
+}
+
+// Add a click event on various child elements to close the parent modal
+(document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
         closeModal($target);
-      });
     });
-  
-    // Add a keyboard event to close all modals
-    document.addEventListener('keydown', (event) => {
-      const e = event || window.event;
-  
-      if (e.keyCode === 27) { // Escape key
+});
+
+// Add a keyboard event to close all modals
+document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
         closeAllModals();
-      }
-    });
+    }
+});
