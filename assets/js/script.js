@@ -191,16 +191,6 @@ let userQueue = function() {
     closeNav();
 }
 
-let userQueue = function() {
-    window.location.replace("./matchQueue.html")
-    settingsSection.classList.remove("userQueue");
-    signupForm.classList.add("hide");
-    hobbiesForm.classList.add("hideform");
-    loginScreen.classList.add("loginScreen");
-    profileSection.classList.add("userProfile");
-    matchesSection.classList.add("userMatches");
-    closeNav();
-}
 
 //Profile picture function
 var loadFile = function (event) {
