@@ -97,7 +97,7 @@ function closeNav() {
 var matchArray = []
 matchArray = JSON.parse(localStorage.getItem("matches"));
 function matchEl(listMatch) {
-    var matchElement = `<img src=${listMatch.picture.large}></img>
+    var matchElement = `<img src=${listMatch.picture?.large}></img>
     <div class="usercontent">
         <h2 class="firstName">${listMatch.name.first}<h2>
         <h4 class="username">${listMatch.login.username}</h4>
@@ -125,3 +125,14 @@ buildTable(matchArray);
     <p class="creativity"></p>
 </div> */
 // $("#hobbiesList").append(hobbiesElement(hobbies[i]))
+
+
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+//Closes side nav bar
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}

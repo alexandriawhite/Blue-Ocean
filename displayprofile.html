@@ -21,9 +21,11 @@
                 <div class="overlay-content">
                     <a href="./index.html">🏠</a>
                     <a id="profile" href="./displayprofile.html">Profile</a>
-                    <a id="matches" href="./matches.html">Matches</a>
+                    <a id="matches" href="./matches.html">Find Your Match</a>
+                    <a id="matchQueue" href="./matchQueue.html">Matches</a>
                     <a id="settings" href="./profile.html">Settings</a>
                 </div>
+                <button id="x"></button>
             </div>
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         </div>
@@ -36,7 +38,7 @@
                 <!-- Name -->
                 <h1 class="disProfile"></h1>
                 <!-- location, age, job, and school-->
-                <h2 class="disLocation">- Location -</h2>
+                <h2 class="disLocation"><span id="city"></span>, <span id="state"></span></h2>
                 <h3><span>Age</span><span>Job</span><span>School</span></h3>
             </header>
             <!-- Bio -->
@@ -45,7 +47,7 @@
                 <h3>Insert Bio</h3>
             </div>
             <script src="./assets/js/displayprofile.js"></script>
-           <!-- <script src="./assets/js/profile.js"></script>-->
+           <script src="./assets/js/profile.js"></script>
     </body>
 
 </html>
