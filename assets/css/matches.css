@@ -6,3 +6,7 @@
     background-repeat: no-repeat;*/
 }
 
+body  {
+    background-color:rgb(197, 232, 244);
+    height: 100vh;
+}
