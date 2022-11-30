@@ -1,12 +1,6 @@
-let bio = localStorage.getItem("blueOceanUserProfile");
-let fullBio = JSON.parse(bio)
-let name = fullBio.name
-let age = fullBio.age
-let job = fullBio.job
-let school = fullBio.school
-let userBio = fullBio.bio
-
-
+// let bio = localStorage.getItem("blueOceanUserProfile");
+// let fullBio = JSON.parse(bio)
+// let age = fullBio.age
 
 fetchRandomUsers().then((data) => {
     var datingPool = data.results;
@@ -33,11 +27,10 @@ fetchRandomUsers().then((data) => {
               profile.push(tempArry)
           }
           */
-        let topEnd = age + 10;
-        let lowerEnd = age - 10;
-        return profile.dob.age <= topEnd && profile.gender == genderFilter;
+        // let topEnd = age + 10;
+        // let lowerEnd = age - 10;
+        return profile.dob.age <= 35 && profile.gender == genderFilter;
     })
-
 
     console.log(ageFiltered);
     console.log(`Filtered Age Dataset length ${ageFiltered.length}`);
