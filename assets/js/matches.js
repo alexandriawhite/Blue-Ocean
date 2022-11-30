@@ -7,22 +7,20 @@ let bio = localStorage.getItem("blueOceanUserProfile");
     let school = fullBio.school
     let userBio = fullBio.bio
 
-
-
 fetchRandomUsers().then((data)=> {
-    var datingPool = data.results;
+    let datingPool = data.results;
     console.log({datingPool});
 
 const users = [men, women]; //import dummy data
 console.log({ men, women });
 
-var genderFilter = 'male';
-var filteredPool = datingPool.filter((person) => {
+let genderFilter = 'male';
+const filteredPool = datingPool.filter((person) => {
     return person.gender === genderFilter;
 });
 
 // filter for age
-var ageFiltered = datingPool.filter(profile => {
+const ageFiltered = datingPool.filter(profile => {
     // we first have to grab it from local storage 
   /*  let tempArry = []
     if(profile.dob.age <= (age - 10 )) {
@@ -37,8 +35,8 @@ var ageFiltered = datingPool.filter(profile => {
 console.log(ageFiltered);
 console.log(`Filtered Age Dataset length ${ageFiltered.length}`);
 
-var matches = {
-    potential: filteredPool, //get prefernce from localuser
+let matches = {
+    potential: filteredPool, //get preference from localuser
     accepted: JSON.parse(localStorage.getItem("matches")) || [], 
     rejected: []
 }
@@ -76,7 +74,6 @@ appendUser(currentMatch);
 
 let matchCount = 0
 
-
 $(`.match`).click(() => {
     console.log("accept");
     matches.potential = matches.potential.filter((matchOptions) => {
@@ -90,7 +87,7 @@ $(`.match`).click(() => {
     appendUser(currentMatch);
     localStorage.setItem("matches", JSON.stringify(matches.accepted))
     matchCount++
-    document.getElementById('Accept').textContent = "Match: " + matchCount;
+    document.getElementById('Accept').textContent = `Match: ${matchCount}`;
 })
 let rejectCount = 0
 
@@ -107,7 +104,7 @@ $(`.reject`).click(() => {
     appendUser(currentMatch);
     rejectCount++
     console.log(rejectCount)
-    document.getElementById('Reject').textContent = "Reject: " + rejectCount;
+    document.getElementById('Reject').textContent = `Reject: ${rejectCount}`;
 })
 
 
@@ -136,7 +133,7 @@ function matchEl(listMatch) {
 }
 function buildTable(matchArray) {
     console.log("Entering Method");
-    var divList = "";
+    let divList = "";
     for (let i = 0; i < matchArray.length; i++){
         $("#matchList").append(matchEl(matchArray[i]));
       }
@@ -163,3 +160,29 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+
+function openModal() {
+    document.getElementById("modal").classList.add("is-active")
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("is-active")
+}
+
+// Add a click event on various child elements to close the parent modal
+(document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+        closeModal($target);
+    });
+});
+
+// Add a keyboard event to close all modals
+document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+    }
+});
