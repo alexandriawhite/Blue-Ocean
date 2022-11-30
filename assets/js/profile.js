@@ -33,7 +33,11 @@ $(".saveProfile").click(() => {
 
     // reload/redirect to the DisplayProfile
     window.location.replace("./displayprofile.html");    
+
 })
+
+
+
 
 
 
@@ -89,11 +93,3 @@ reader.readAsDataURL(img); // converts the blob to base64 and calls onload
 // }
 
 
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-}
-
-//Closes side nav bar
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}

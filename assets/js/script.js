@@ -119,18 +119,17 @@ appendHobbies();
 /*Hobbies submit button*/
 $("#hobbiesForm").submit(e => {
     e.preventDefault();
-    console.log("helloWorld");
     /*Find all checkboxes in form field*/
     /*Add all checkboxes with selected property to an array*/
     //Save array to user profile
     var userHobbies = [];
     $("input:checked").each(function () {
 
-        console.log($(this).val())
+        //console.log($(this).val())
         // TODO:  userHobbies.push($(this).attr('name'));
     });
     // TODO: save hobbie array to user object using dot notation
-    console.log({ user });
+    //console.log({ user });
     window.location.href ="./profile.html";
 });
 
@@ -179,7 +178,24 @@ let userSettings = function () {
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    closeNav();
+    //if (localStorage.getItem("blueOceanUserProfile") !== null){
+    // let bio = localStorage.getItem("blueOceanUserProfile");
+    //      let fullBio = JSON.parse(bio)
+    //      let name = fullBio.name
+    //      let location = fullBio.location
+    //      let age = fullBio.age
+    //      let job = fullBio.job
+    //      let school = fullBio.school
+    //      let userBio = fullBio.bio
+    //      $('#name').text(name);
+    //      $('#age').text(age);
+    //      $('#job').text(job);
+    //      $('#school').text(school);
+    //      $('#userBio').text(userBio);
+    //  }
+
+
+     closeNav();
 }
 
 let userQueue = function() {
@@ -222,8 +238,6 @@ $.ajax({
                 women.push(value)
             }
         })
-        // console.log(men);
-        // console.log(women);
     }
 });
 cancel?.addEventListener("click", closeLogin)
