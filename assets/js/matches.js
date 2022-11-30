@@ -2,17 +2,17 @@
 // let fullBio = JSON.parse(bio)
 // let age = fullBio.age
 
-fetchRandomUsers().then((data) => {
-    var datingPool = data.results;
-    console.log({ datingPool });
+fetchRandomUsers().then((data)=> {
+    let datingPool = data.results;
+    console.log({datingPool});
 
     const users = [men, women]; //import dummy data
     console.log({ men, women });
 
-    var genderFilter = 'male';
-    var filteredPool = datingPool.filter((person) => {
-        return person.gender === genderFilter;
-    });
+let genderFilter = 'male';
+const filteredPool = datingPool.filter((person) => {
+    return person.gender === genderFilter;
+});
 
     var countryFilter = 'United Kingdom';
     var filtered = datingPool.filter((person) => {
@@ -35,12 +35,12 @@ fetchRandomUsers().then((data) => {
     console.log(ageFiltered);
     console.log(`Filtered Age Dataset length ${ageFiltered.length}`);
 
-    var matches = {
-        potential: filteredPool, //get prefernce from localuser
-        accepted: JSON.parse(localStorage.getItem("matches")) || [],
-        rejected: []
-    }
-    console.log({ matches })
+let matches = {
+    potential: filteredPool, //get preference from localuser
+    accepted: JSON.parse(localStorage.getItem("matches")) || [], 
+    rejected: []
+}
+console.log({ matches })
 
 
     function randomUser() {
@@ -88,7 +88,7 @@ fetchRandomUsers().then((data) => {
         appendUser(currentMatch);
         localStorage.setItem("matches", JSON.stringify(matches.accepted))
         matchCount++
-        document.getElementById('Accept').textContent = "Accept: " + matchCount;
+        document.getElementById('Accept').textContent = `Accept: ${matchCount} `;
     })
     let rejectCount = 0
 
@@ -105,7 +105,7 @@ fetchRandomUsers().then((data) => {
         appendUser(currentMatch);
         rejectCount++
         console.log(rejectCount)
-        document.getElementById('Reject').textContent = "Reject: " + rejectCount;
+        document.getElementById('Reject').textContent = `Reject: ${rejectCount}`;
     })
 
 
@@ -134,8 +134,8 @@ function matchEl(listMatch) {
 }
 function buildTable(matchArray) {
     console.log("Entering Method");
-    var divList = "";
-    for (let i = 0; i < matchArray.length; i++) {
+    let divList = "";
+    for (let i = 0; i < matchArray.length; i++){
         $("#matchList").append(matchEl(matchArray[i]));
     }
     console.log(matchArray)
@@ -161,3 +161,29 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+
+function openModal() {
+    document.getElementById("modal").classList.add("is-active")
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("is-active")
+}
+
+// Add a click event on various child elements to close the parent modal
+(document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+        closeModal($target);
+    });
+});
+
+// Add a keyboard event to close all modals
+document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+    }
+});

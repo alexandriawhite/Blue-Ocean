@@ -1,6 +1,6 @@
 function fetchRandomUsers() {
-    const hobbies= ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
-    var datingPool = {men:[], women:[]};
+    const hobbies = ["swimming", "hiking", "football", "baseball", "soccer", "hockey"]
+    let datingPool = {men:[], women:[]};
     
 return $.ajax({
     url: 'https://randomuser.me/api/?results=30',
@@ -9,7 +9,7 @@ return $.ajax({
         return $.each(data.results, function(key,value){
             let randomHobbies= Math.floor(Math.random() * hobbies.length);
             value['hobbies']=hobbies[randomHobbies];
-            if(value.gender=== "male") {
+            if(value.gender === "male") {
                 datingPool.men.push(value)
             } else {
                 datingPool.women.push(value)
@@ -22,15 +22,15 @@ return $.ajax({
 // import this script into HTML file, this needs to run first 
 // 2nd script file, you'll pass the user email through this objects method
 
-var apiKey= "7eaf03a186b541c9a59a953deb840f9a";
+const apiKey= "7eaf03a186b541c9a59a953deb840f9a";
 
 class ZeroBounceApi {
     constructor(apiKey){
-        var baseUrl = "https://api.zerobounce.net/v2";
-        var get = new XMLHttpRequest();
+        const baseUrl = "https://api.zerobounce.net/v2";
+        let get = new XMLHttpRequest();
         this.apiKey = apiKey;
         this.getCredits = function(){
-            var uri = baseUrl + "/getcredits" + "?api_key=" + apiKey;
+            var uri = `${baseUrl}/getcredits?api_key=${apiKey}`;
             get.open('GET', uri, false);
             get.send();
             if (get.readyState === 4 && get.status === 200) {
@@ -46,11 +46,11 @@ class ZeroBounceApi {
          * @return - a JSONObject with all of the information for the specified email
          * */
         this.validate = function(email, ip_address){
-            var uri = baseUrl + "/validate" + "?api_key=" + apiKey + "&email=" + email + "&ip_address=" + ip_address;
+            let uri = `${baseUrl}/validate?api_key=${apiKey}&email=${email}&ip_address=${ip_address}`;
             get.open('GET', uri, false);
             get.send();
             if (get.readyState == 4 && get.status == 200) {
-                var responseObj= get.responseText;
+                let responseObj= get.responseText;
                 return JSON.parse(responseObj).status;
             }
         }

@@ -42,8 +42,8 @@ $(".saveProfile").click(() => {
 
 
 //Profile picture function
-var loadFile = function (event) {
-    var image = document.getElementById("output");
+const loadFile = function (event) {
+    const image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
 
    
