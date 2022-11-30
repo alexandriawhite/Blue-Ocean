@@ -71,6 +71,14 @@ fetchRandomUsers().then((data) => {
     let currentMatch = randomUser();
 
     appendUser(currentMatch);
+<<<<<<< HEAD
+=======
+    localStorage.setItem("matches", JSON.stringify(matches.accepted))
+    matchCount++
+    document.getElementById('Accept').textContent = "Match: " + matchCount;
+})
+let rejectCount = 0
+>>>>>>> f0e84e15629e327ae39b0c43534203d1a7c7039b
 
     // Add a search local storage function to look for matches already logged
     // Add to the list if there are already people there: Done
@@ -129,9 +137,9 @@ fetchRandomUsers().then((data) => {
 var matchArray = []
 matchArray = JSON.parse(localStorage.getItem("matches"));
 function matchEl(listMatch) {
-    var matchElement = `<img src=${listMatch.picture?.large}></img>
+    var matchElement = `<img src=${listMatch.picture?.large} id=listPic></img>
     <div class="usercontent">
-        <h2 class="firstName">${listMatch.name.first}<h2>
+        <h4 class="firstName">${listMatch.name.first}<h2>
         <h4 class="username">${listMatch.login.username}</h4>
         <p class="age">${listMatch.dob.age}</p>
         <p class="sports">${listMatch.hobbies}</p>
