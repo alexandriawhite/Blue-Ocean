@@ -1,3 +1,4 @@
+let disProfile = document.getElementsByClassName("disProfile")
 let profileSaveBtn = document.querySelector(".saveProfile")
 var script = document.createElement('script');
 script.type = 'text/javascript';
@@ -27,5 +28,24 @@ $(".saveProfile").click(()=> {
         job: $(".job").val(),
         school: $(".school").val(),
     }
-    localStorage.setItem("blueOceanUserProfile", JSON.stringify(userProfile));
+    localStorage.setItem("blueOceanUserProfile", JSON.stringify(userProfile))
+    console.log('hello');
+let names = localStorage.getItem("blueOceanUserProfile")
+let nameinput = JSON.parse(names).name
+    console.log(nameinput);
+    disProfile.textContent=`nameinput`  
 })
+
+// function userInfo (){
+//     let nfo = document.querySelector(".info");
+//     info.textContent = `test`
+//     info.append(info);
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+//Closes side nav bar
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
