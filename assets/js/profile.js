@@ -33,6 +33,7 @@ $(".saveProfile").click(() => {
 
     // reload/redirect to the DisplayProfile
     window.location.replace("./displayprofile.html");    
+
 })
 
 

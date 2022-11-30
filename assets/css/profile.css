@@ -71,3 +71,7 @@ aside {
     margin: 2% 88%;
     width:80px;
 }
+
+.hideMe, .dummypic {
+    display: none;
+}
