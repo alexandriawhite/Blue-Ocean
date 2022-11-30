@@ -119,18 +119,17 @@ appendHobbies();
 /*Hobbies submit button*/
 $("#hobbiesForm").submit(e => {
     e.preventDefault();
-    console.log("helloWorld");
     /*Find all checkboxes in form field*/
     /*Add all checkboxes with selected property to an array*/
     //Save array to user profile
     var userHobbies = [];
     $("input:checked").each(function () {
 
-        console.log($(this).val())
+        //console.log($(this).val())
         // TODO:  userHobbies.push($(this).attr('name'));
     });
     // TODO: save hobbie array to user object using dot notation
-    console.log({ user });
+    //console.log({ user });
     window.location.href ="./profile.html";
 });
 
@@ -239,8 +238,6 @@ $.ajax({
                 women.push(value)
             }
         })
-        // console.log(men);
-        // console.log(women);
     }
 });
 cancel?.addEventListener("click", closeLogin)
@@ -276,7 +273,6 @@ $("#loginForm").submit(function (e) {
 
 // login
 function loginUser() {
-    console.log("logging in")
 	let username = document.getElementById('username').value;
 	let password = document.getElementById('password').value;
     // let loginAttempt = {
@@ -292,9 +288,7 @@ function loginUser() {
                 // break;
             } 
             else {
-                // error if username and password don't match
-                // console.log('incorrect username or password');
-                
+                // error if username and password don't match                
             }
         }
     }
@@ -331,7 +325,6 @@ function createUser() {
             var result= emailAuth.validate(emailInput);
             // if(result === "alias_address" || result === "leading_period_removed") {
                 if(result == "valid") {
-                    console.log("is active")
                  
             }
             else if (result == "invalid") {
