@@ -1,4 +1,4 @@
-let disProfile = document.querySelector(".disProfile")
+let disProfile = document.getElementsByClassName("disProfile")
 let profileSaveBtn = document.querySelector(".saveProfile")
 var script = document.createElement('script');
 script.type = 'text/javascript';
@@ -30,12 +30,10 @@ $(".saveProfile").click(()=> {
     }
     localStorage.setItem("blueOceanUserProfile", JSON.stringify(userProfile))
     console.log('hello');
-//     let names = localStorage.getItem(blueOceanUserProfile)
-// let nameinput = JSON.parse(names)
-    console.log(userProfile.name);
-    let e = disProfile.textContent=`userProfile.name`
-    disProfile.append("e");
-    
+let names = localStorage.getItem("blueOceanUserProfile")
+let nameinput = JSON.parse(names).name
+    console.log(nameinput);
+    disProfile.textContent=`nameinput`  
 })
 
 // function userInfo (){
