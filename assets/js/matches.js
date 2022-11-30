@@ -1,3 +1,14 @@
+let bio = localStorage.getItem("blueOceanUserProfile");
+    let fullBio = JSON.parse(bio)
+    let name = fullBio.name
+    let location = fullBio.location
+    let age = fullBio.age
+    let job = fullBio.job
+    let school = fullBio.school
+    let userBio = fullBio.bio
+
+
+
 fetchRandomUsers().then((data)=> {
     var datingPool = data.results;
     console.log({datingPool});
@@ -9,6 +20,22 @@ var genderFilter = 'male';
 var filteredPool = datingPool.filter((person) => {
     return person.gender === genderFilter;
 });
+
+// filter for age
+var ageFiltered = datingPool.filter(profile => {
+    // we first have to grab it from local storage 
+  /*  let tempArry = []
+    if(profile.dob.age <= (age - 10 )) {
+        profile.push(tempArry)
+    }
+    */
+   let topEnd = age + 10;
+   let lowerEnd = age - 10;
+    return profile.dob.age <= 35 && profile.gender == genderFilter;
+})
+
+console.log(ageFiltered);
+console.log(`Filtered Age Dataset length ${ageFiltered.length}`);
 
 var matches = {
     potential: filteredPool, //get prefernce from localuser

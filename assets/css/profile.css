@@ -1,6 +1,6 @@
 
 .aprofile {
-    background-color:lightblue;
+    background-color:rgb(197, 232, 244);
 
 }
 
@@ -10,8 +10,8 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-img {
-    margin-right:100%;
+img, #file {
+    margin: 0 30%;
     padding:0;
     align-items: center;
 }
@@ -27,8 +27,9 @@ label {
     font-size: 20px;
     flex-wrap: wrap;
     font-family: Arial, Helvetica, sans-serif;
-    margin-right: 10%;
+    margin-left: 5%;
 }
+
 
 .bio {
     width: 80%;
@@ -37,3 +38,12 @@ label {
     margin-right: 10%;
 }
 
+div {
+    margin: 5% 20%;
+    background-color: white;
+}
+
+
+.bio, #city, #state, .age, .job, .school {
+    margin:0 5%;
+}
