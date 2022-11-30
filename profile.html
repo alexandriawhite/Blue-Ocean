@@ -28,35 +28,38 @@
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <!--User Profile Section-->
-        <div class="tile is-10 is-parent is-vertical center-content">
-            <article class="tile is-child box profile aprofile">
-                <div>
-                    <h1>Profile</h1>
-                    <div class="profile-pic">
+        <aside class="profile-card">
+            <div class="">
+                <article class="">
+                    <h1>Update Profile</h1>
+                    <div>
                         <img src="./assets/images/profileimg.jpg" id="output" width="200" />
                         <input id="file" type="file" onchange="loadFile(event)" />
-                    </div>
+                    
                     <label>First Name: </label>
                     <input class="name" type="text" placeholder="Enter Name" name="name" required>
                     <label>Bio: </label>
                     <input class="bio" type="text" placeholder="Enter Short Bio" name="bio" required>
                     <label class="location">Dating in: </label>
-                   <label>Age:</label>
-                   <input class="age" type="text" class="age">
+                    <div><span id="city"></span>, <span id="state"></span></div>
+                    <label>Age:</label>
+                    <input class="age" type="text" class="age">
                     <label>Job: </label>
                     <input class="job" type="text" placeholder="Enter job">
                     <label>School: </label>
                     <input class="school" type="text" placeholder="Enter school">
                     <button class="saveProfile appendBio" type="submit">Save</button>
-            </article>
-            <!--User Settings Section-->
-            <article class="tile is-child box settings userSettings">
-                <label>Settings: </label>
-                <label class="age">Age range for matches:</label>
-                <input type="text" id="minAge" placeholder="Minimum age">
-                <input type="text" id="maxAge" placeholder="Maximum age">
-            </article>
-        </div>
+                </div>
+                </article>
+                <!--User Settings Section-->
+                <article class="tile is-child box settings userSettings">
+                    <label>Settings: </label>
+                    <label class="age">Age range for matches:</label>
+                    <input type="text" id="minAge" placeholder="Minimum age">
+                    <input type="text" id="maxAge" placeholder="Maximum age">
+                </article>
+            </div>
+        </aside>
         <!-- <script src="./assets/js/script.js"></script> -->
         <script src="./assets/js/profile.js"></script>
         <script src="./assets/js/queue.js"></script>

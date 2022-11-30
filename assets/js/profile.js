@@ -5,7 +5,6 @@ script.type = 'text/javascript';
 script.src = 'https://geolocation-db.com/json/geoip.php?jsonp=callback';
 var h = document.getElementsByTagName('script')[0];
 h.parentNode.insertBefore(script, h);
-localStorage.append
 
 //Dating location
 function callback(data) {
@@ -41,16 +40,23 @@ $(".saveProfile").click(() => {
     let userBio = fullBio.bio
     console.log(fullBio);
     console.log(name, location, age, job, school, userBio);
-    disProfile.innerHTML=name
+    $('.disProfile').text(name);
     
     
 })
 
+//var matchElement = `<img src=${listMatch.picture?.large}></img>
+
+
 //Profile picture function
 var loadFile = function (event) {
-    var image = document.getElementById("output");
+   // var image = `<img src=${event.target.files[0]}></img>`
+    document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
 };
+
+//`img src=${event.target.file}></img>`
+
 
 // $(".appendBio").click(()=> {
 // let bio = localStorage.getItem("blueOceanUserProfile")
