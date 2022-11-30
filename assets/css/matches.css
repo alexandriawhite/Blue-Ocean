@@ -24,6 +24,7 @@
     margin-left: 75px
 }
 
+
 #sessionTally {
     display: flex;
     justify-content: center;
@@ -57,3 +58,9 @@
     align-items: start;
     flex-direction: column;
 }
+
+body  {
+    background-color:rgb(197, 232, 244);
+    height: 100vh;
+}
+
