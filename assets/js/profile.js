@@ -20,40 +20,62 @@ function callback(data) {
 //} else {
 $(".saveProfile").click(() => {
     let userProfile = {
-        pic: $("#file").val(),
+        //pic: $("#file").val(),
         name: $(".name").val(),
-        city: $("#city").val(),
-        state: $("#state").val(),
+       // city: $("#city").val(),
+        // state: $("#state").val(),
         age: $(".age").val(),
         bio: $(".bio").val(),
         job: $(".job").val(),
         school: $(".school").val(),
     }
     localStorage.setItem("blueOceanUserProfile", JSON.stringify(userProfile))
-    let bio = localStorage.getItem("blueOceanUserProfile")
-    let fullBio = JSON.parse(bio)
-    let name = fullBio.name
-    let location = fullBio.location
-    let age = fullBio.age
-    let job = fullBio.job
-    let school = fullBio.school
-    let userBio = fullBio.bio
-    console.log(fullBio);
-    console.log(name, location, age, job, school, userBio);
-    $('.disProfile').text(name);
-    
-    
+
+    // reload/redirect to the DisplayProfile
+    window.location.replace("./displayprofile.html");    
 })
 
-//var matchElement = `<img src=${listMatch.picture?.large}></img>
 
 
 //Profile picture function
 var loadFile = function (event) {
-   // var image = `<img src=${event.target.files[0]}></img>`
-    document.getElementById("output");
+    var image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
+
+   
+    console.log(image.src)
+    console.log(image)
+    // let b = image
+    // let c = b.slice(9, 4);
+   // console.log(c);
+    
+   
+//    const a = new FileReader
+//     a.readAsDataURL(file.image);
+//     a.addEventListener('load', () => {
+//         const url=a.result;
+//         console.log(a);
+//     })
+   
+    
+    // let imgOutput = document.getElementById("imgOutput");
+    // let test = image.src
+    // localStorage.setItem("img", JSON.stringify(test))
+    // let img = localStorage.getItem("img")
+    // let photo = JSON.parse(img)
+    // console.log(photo)
+    //imgOutput.src = URL.createObjectURL(photo);
+    
+//};
+
+
+
+let reader = new FileReader();
+reader.readAsDataURL(img); // converts the blob to base64 and calls onload
+  imageOutput.src = reader.result; // data url
+  console.log("hi")
 };
+
 
 //`img src=${event.target.file}></img>`
 
