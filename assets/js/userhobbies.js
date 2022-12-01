@@ -1,4 +1,4 @@
-let userhobbies = document.getElementsByClassName("userhobbies")
+let userhobbies = $('#hobbiesBtn')
 //function for hobbies
 function hobbiesElement(hobbie) {
     var hobbieElement = `<div>
@@ -11,7 +11,7 @@ function hobbiesElement(hobbie) {
 //Appending hobbies list
 function appendUserHobbies() {
     console.log("test")
-    var hobbies = ["swimming",
+    let hobbies = ["swimming",
         "hiking",
         "football",
         "baseball",
@@ -30,12 +30,13 @@ function appendUserHobbies() {
         "dance",
         "cheer"
     ];
-    for (var i = 0; i <= hobbies.length; i++) {
-        $("#hobbiesList").append(hobbiesElement(hobbies[i]))
-    }
+    $("#hobbiesList").innerHTML = '';
+    hobbies.forEach(hobby => {
+        $("#hobbiesList").append(hobbiesElement(hobby))
+    })
 }
 //Running hobbies
-appendUserHobbies();
+// appendUserHobbies();
 
 /*Hobbies submit button*/
 $("#userhobbiesForm").submit(e => {
@@ -49,12 +50,12 @@ $("#userhobbiesForm").submit(e => {
         //console.log($(this).val())
         // TODO:  userHobbies.push($(this).attr('name'));
     });
-    // TODO: save hobbie array to user object using dot notation
+    // TODO: save hobby array to user object using dot notation
     //console.log({ user });
     window.location.href ="./profile.html";
 });
-
-userhobbies.addEventListener("click", hobbies)
+console.log(userhobbies.text)
+userhobbies.click(appendUserHobbies)
 
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
