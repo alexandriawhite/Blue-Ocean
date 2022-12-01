@@ -1,3 +1,4 @@
+/* supplemental CSS to bulma schema. */
 .userpic {
     justify-content: center;
     height: 300px;
@@ -41,9 +42,7 @@
     align-items: center;
 }
 
-.usercontent{
 
-}
 .firstName {
     font-size: 30px;
     margin-left:0%;

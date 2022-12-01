@@ -1,4 +1,4 @@
-// creating an array for men dating profiles
+// creating an array database for men dating profiles
 let men = [
     {
         numb: 1,

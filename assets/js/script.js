@@ -1,3 +1,4 @@
+// variable declarations.//
 var badRequestUrl = './index.html';
 var redirectUrl = './404.html';
 var user = localStorage.getItem('blueOceanUser') || {};
@@ -27,16 +28,6 @@ const hobbieList = [  "hiking","football","baseball","soccer","hockey","lacrosse
 
 
 
-/*404 error
-fetch(badRequestUrl).then(function (response) {
-    // Check the response value is equal to 404.
-    if (response.status === 404) {
-        // If the page is not on the 404 page, redirect to it.
-        document.location.replace(redirectUrl);
-    } else {
-        return response.json();
-    }
-});*/
 
 /*
 function userInfo (){
