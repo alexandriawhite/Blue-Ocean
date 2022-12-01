@@ -77,7 +77,6 @@ const loadFile = function (event) {
 let reader = new FileReader();
 reader.readAsDataURL(img); // converts the blob to base64 and calls onload
   imageOutput.src = reader.result; // data url
-  console.log("hi")
 };
 
 
