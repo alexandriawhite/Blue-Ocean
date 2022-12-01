@@ -17,6 +17,14 @@ img, #file {
     align-items: center;
 }
 
+#display_image{
+    width:375px;
+    height:211px;
+    border: 1px solid black;
+    background-position:center;
+    background-size:cover;
+}
+
 .name, .job, .school, .age {
 font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;

@@ -41,12 +41,6 @@ $(".saveProfile").click(() => {
 
 
 
-//Profile picture function
-const loadFile = function (event) {
-    const image = document.getElementById("output");
-    image.src = URL.createObjectURL(event.target.files[0]);
-
-}
     // let b = image
     // let c = b.slice(9, 4);
    // console.log(c);
