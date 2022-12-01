@@ -46,9 +46,7 @@ const loadFile = function (event) {
     const image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
 
-   
-    console.log(image.src)
-    console.log(image)
+}
     // let b = image
     // let c = b.slice(9, 4);
    // console.log(c);
@@ -74,11 +72,10 @@ const loadFile = function (event) {
 
 
 
-let reader = new FileReader();
-reader.readAsDataURL(img); // converts the blob to base64 and calls onload
-  imageOutput.src = reader.result; // data url
-  console.log("hi")
-};
+// let reader = new FileReader();
+// reader.readAsDataURL(img); // converts the blob to base64 and calls onload
+//   imageOutput.src = reader.result; // data url
+// };
 
 
 //`img src=${event.target.file}></img>`
@@ -93,3 +90,14 @@ reader.readAsDataURL(img); // converts the blob to base64 and calls onload
 // }
 
 
+// let uploadImage = function (event) {
+//     console.log({event});
+//     const reader = new FileReader();
+//     console.log({reader});
+//     reader.addEventListener('load', ()=>{
+//         console.log('hello, work')
+//         const uploadImage=reader.result;
+//         console.log({uploadImage});
+//     });
+// };
+// $("#file").change(uploadImage);

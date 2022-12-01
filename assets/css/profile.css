@@ -90,3 +90,8 @@ aside {
     margin:1% 5%;
     width:80px;
 }
+
+.hobbies:hover {
+    background-color:#fff;
+    color:#00d1b2;
+}

@@ -4,10 +4,9 @@
 
 fetchRandomUsers().then((data)=> {
     let datingPool = data.results;
-    console.log({datingPool});
 
     const users = [men, women]; //import dummy data
-    console.log({ men, women });
+
 
 let genderFilter = 'male';
 const filteredPool = datingPool.filter((person) => {
@@ -40,12 +39,10 @@ let matches = {
     accepted: JSON.parse(localStorage.getItem("matches")) || [], 
     rejected: []
 }
-console.log({ matches })
 
 
     function randomUser() {
         let user = matches.potential[Math.floor(Math.random() * matches.potential.length)]
-        console.log({ rando: user })
         return user;
     }
 
@@ -55,7 +52,6 @@ console.log({ matches })
         // compare those two likes to the current match likes
         // Try to use currentMatch.hobbies.includes(user.like)   
         // If does include go to user - if else skip to next user 
-        console.log({ user });
         if (user) {
             $(`.userpic`).css(`background`, `url(${user.picture.large}) no-repeat center/80%`);
         }
