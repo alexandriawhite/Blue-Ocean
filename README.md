@@ -47,6 +47,18 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 ## Screenshot  
 ![Blue Ocean](./assets/images/BO-SS.png)
 
+Video 1: Sign Up Form
+https://drive.google.com/file/d/1EByu8JqnlipVAOgA1g-chuBzVZ9erFTR/view
+
+Video 2: Login form and side menu functionality
+https://drive.google.com/file/d/1AlEYdj1VJ85DY3SvJH7CGu8N4rAtNTMh/view
+
+Video 3: Match reject/accept and localStorage caching functionality
+https://drive.google.com/file/d/1Ekf8KM4SHU5B7iwrD8hifGOCfMsDWJ_m/view
+
+Video 4: Profile creation
+https://drive.google.com/file/d/1VCNzrhrNJK0XRn-ajGHJwnKmDZoA4r0q/view
+
 ## Credit
 #### Group project created by:
 * Maggie Abernathy

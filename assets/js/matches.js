@@ -1,13 +1,14 @@
 // let bio = localStorage.getItem("blueOceanUserProfile");
 // let fullBio = JSON.parse(bio)
 // let age = fullBio.age
-
+// fetch api variable results and push into men and women variables.//
 fetchRandomUsers().then((data)=> {
     let datingPool = data.results;
 
     const users = [men, women]; //import dummy data
 
 
+    // specify gender filter.//
 let genderFilter = 'male';
 const filteredPool = datingPool.filter((person) => {
     return person.gender === genderFilter;
@@ -34,13 +35,14 @@ const filteredPool = datingPool.filter((person) => {
     console.log(ageFiltered);
     console.log(`Filtered Age Dataset length ${ageFiltered.length}`);
 
+// pull match information out of localStorage and parse into array//
 let matches = {
     potential: filteredPool, //get preference from localuser
     accepted: JSON.parse(localStorage.getItem("matches")) || [], 
     rejected: []
 }
 
-
+// create a function that pulls random user information as a match//
     function randomUser() {
         let user = matches.potential[Math.floor(Math.random() * matches.potential.length)]
         return user;
@@ -70,7 +72,7 @@ let matches = {
 
     let matchCount = 0
 
-
+    // create jQuery event listener click to tally up accept and reject.//
     $(`.match`).click(() => {
         console.log("accept");
         matches.potential = matches.potential.filter((matchOptions) => {
@@ -115,6 +117,7 @@ let matches = {
 
 
 })
+// create a pseudo div grpoup with classes pulling information from matchArray//
 var matchArray = []
 matchArray = JSON.parse(localStorage.getItem("matches"));
 function matchEl(listMatch) {
@@ -129,8 +132,8 @@ function matchEl(listMatch) {
     </div><br/>`;
     return matchElement;
 }
+// render array information on match Queue page.//
 function buildTable(matchArray) {
-    console.log("Entering Method");
     let divList = "";
     for (let i = 0; i < matchArray.length; i++){
         $("#matchList").append(matchEl(matchArray[i]));
@@ -139,14 +142,6 @@ function buildTable(matchArray) {
     //   document.getElementById('matchList').textContent = divList;
 }
 buildTable(matchArray);
-/* <div class="userpic"></div>
-<div class="usercontent">
-    <h4 class="username"></h4>
-    <p class="age"></p>
-    <p class="sports"></p>
-    <p class="creativity"></p>
-</div> */
-// $("#hobbiesList").append(hobbiesElement(hobbies[i]))
 
 
 

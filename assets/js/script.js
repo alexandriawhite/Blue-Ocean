@@ -1,3 +1,4 @@
+// variable declarations.//
 var badRequestUrl = './index.html';
 var redirectUrl = './404.html';
 var user = localStorage.getItem('blueOceanUser') || {};

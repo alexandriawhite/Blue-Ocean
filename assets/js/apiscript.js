@@ -3,8 +3,12 @@ function fetchRandomUsers() {
     let datingPool = {men:[], women:[]};
     
 return $.ajax({
+    // random user api url, specifies only profiles in the us and how many results//
+    // we would like it to render.//
     url: 'https://randomuser.me/api/?nat=us&results=30',
     dataType: 'json',
+    //this function uses the data results to apend hobbies to the api profile information.//
+    // 
     success: function(data) {
         return $.each(data.results, function(key,value){
             let randomHobbies= Math.floor(Math.random() * hobbies.length);
@@ -19,11 +23,9 @@ return $.ajax({
   })
 }
 
-// import this script into HTML file, this needs to run first 
-// 2nd script file, you'll pass the user email through this objects method
 
 const apiKey= "7eaf03a186b541c9a59a953deb840f9a";
-
+// api called here to show number of credits or email calls our api key has left.//
 class ZeroBounceApi {
     constructor(apiKey){
         const baseUrl = "https://api.zerobounce.net/v2";

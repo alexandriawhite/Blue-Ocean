@@ -60,7 +60,7 @@ body {
     line-height: 8px;
     width:80px;
 }
-
+/* insert hover pseudoclass for login class  */
 .login:hover {
     background-color:#16baa2;
     border:#00d1b2;
@@ -78,7 +78,7 @@ body {
     line-height: 8px;
     width:100%;
 }
-
+/* insert hover pseudoclass for loginForm */
 .loginForm:hover {
     background-color:#16baa2;
     border:#00d1b2;
@@ -98,6 +98,7 @@ body {
     width:80px;
     margin-left: 90%;
 }
+/* insert hover pseudoclass for signup  */
 .signup:hover {
     border-color: #00d1b2;
 }
@@ -116,6 +117,8 @@ body {
     border: none;
     line-height: 8px;
 }  
+
+/* insert hover pseudoclass for cancelbtn  */
 .cancelbtn:hover {
     background-color: lightgray;
     color:gray;
@@ -167,6 +170,7 @@ body {
     transition: 0.3s;
   }
   
+  /* insert hover pseudoclass for overlay class  */
   .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
   }
@@ -177,7 +181,7 @@ body {
     right: 45px;
     font-size: 60px;
   }
-  
+  /* insert parameters for responsive design */
   @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
     .overlay .closebtn {
