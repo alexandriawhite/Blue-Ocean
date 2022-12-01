@@ -23,6 +23,17 @@ function load() {
     $('.job').text(job);
     $('.school').text(school);
     $('.userBio').text(userBio);
+};
+function loadImage(){
+let img = localStorage.getItem("img")
+let photo = JSON.parse(img)
+let jpg = document.getElementById("profImage")
+let newImg = new Image();
+console.log(photo)
+newImg.src= photo
+//jpg.src= photo
+document.body.appendChild(newImg)
 }
 
 load();
+loadImage();
