@@ -3,7 +3,7 @@ function fetchRandomUsers() {
     let datingPool = {men:[], women:[]};
     
 return $.ajax({
-    url: 'https://randomuser.me/api/?results=30',
+    url: 'https://randomuser.me/api/?nat=us&results=30',
     dataType: 'json',
     success: function(data) {
         return $.each(data.results, function(key,value){
