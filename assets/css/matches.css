@@ -42,7 +42,7 @@
 }
 
 .usercontent{
-    
+
 }
 .firstName {
     font-size: 30px;
@@ -55,12 +55,16 @@
 }
 #matchList {
     display:flex;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
 }
 
 body  {
     background-color:rgb(197, 232, 244);
     height: 100vh;
+}
+#listHeader {
+    font-weight: bolder;
+    font-size: 50px;
 }
 

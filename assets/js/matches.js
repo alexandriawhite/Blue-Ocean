@@ -124,11 +124,12 @@ matchArray = JSON.parse(localStorage.getItem("matches"));
 function matchEl(listMatch) {
     var matchElement = `<img src=${listMatch.picture?.large} id=listPic></img>
     <div class="usercontent">
-        <h4 class="firstName">${listMatch.name.first}<h2>
-        <h4 class="username">${listMatch.login.username}</h4>
-        <p class="age">${listMatch.dob.age}</p>
-        <p class="sports">${listMatch.hobbies}</p>
+        <h4 class="firstName">${listMatch.name.first}<h4>
+        <h4 class="pronoun">Gender: ${listMatch.gender}</h4>
+        <p class="age">Age: ${listMatch.dob.age}</p>
+        <p class="sports">Hobbies: ${listMatch.hobbies}</p>
         <p class="creativity"></p>
+        <h4 class="username">Username: ${listMatch.login.username}</h4>
     </div><br/>`;
     return matchElement;
 }
