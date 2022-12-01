@@ -36,7 +36,6 @@ class ZeroBounceApi {
             get.open('GET', uri, false);
             get.send();
             if (get.readyState === 4 && get.status === 200) {
-                console.log(get.responseText);
                 return get.responseText.status;
             }
         }

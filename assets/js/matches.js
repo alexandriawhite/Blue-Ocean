@@ -32,8 +32,6 @@ const filteredPool = datingPool.filter((person) => {
         return profile.dob.age <= 35 && profile.gender == genderFilter;
     })
 
-    console.log(ageFiltered);
-    console.log(`Filtered Age Dataset length ${ageFiltered.length}`);
 
 // pull match information out of localStorage and parse into array//
 let matches = {
@@ -74,14 +72,12 @@ let matches = {
 
     // create jQuery event listener click to tally up accept and reject.//
     $(`.match`).click(() => {
-        console.log("accept");
         matches.potential = matches.potential.filter((matchOptions) => {
             if (matchOptions.id.value === currentMatch.id.value) {
                 return false
             } else { return true }
         })
         matches.accepted.push(currentMatch);
-        console.log(matches);
         currentMatch = randomUser();
         appendUser(currentMatch);
         localStorage.setItem("matches", JSON.stringify(matches.accepted))
@@ -91,18 +87,15 @@ let matches = {
     let rejectCount = 0
 
     $(`.reject`).click(() => {
-        console.log("reject")
         matches.potential = matches.potential.filter((matchOptions) => {
             if (matchOptions.id.value === currentMatch.id.value) {
                 return false
             } else { return true }
         })
         matches.rejected.push(currentMatch);
-        console.log(matches)
         currentMatch = randomUser();
         appendUser(currentMatch);
         rejectCount++
-        console.log(rejectCount)
         document.getElementById('Reject').textContent = `Reject: ${rejectCount}`;
     })
 
@@ -138,7 +131,6 @@ function buildTable(matchArray) {
     for (let i = 0; i < matchArray.length; i++){
         $("#matchList").append(matchEl(matchArray[i]));
     }
-    console.log(matchArray)
     //   document.getElementById('matchList').textContent = divList;
 }
 buildTable(matchArray);
