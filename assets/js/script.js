@@ -27,15 +27,6 @@ let register
 const hobbieList = [  "hiking","football","baseball","soccer","hockey","lacrosse","wrestling","golf","basketball","boxing","cycling","bowling","swimming","climbing","gymnastics","dance","cheer"]
 
 
-
-
-/*
-function userInfo (){
-    let nfo = document.querySelector(".info");
-    info.textContent = `test`
-    info.append(info);
-}*/
-
 //Opens side nav bar
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
@@ -64,20 +55,6 @@ function hobbiesElement(hobbie) {
     return hobbieElement;
 }
 
-
-/*
-const otherCheckbox = document.querySelector('#other');
-const otherText = document.querySelector('#otherValue');
-otherText.style.visibility = 'hidden';
-
-otherCheckbox.addEventListener('change', () => {
-    if (otherCheckbox.checked) {
-        otherText.style.visibility = 'visible';
-        otherText.value = '';
-    } else {
-        otherText.style.visibility = 'hidden';
-    }
-});*/
 
 //Appending hobbies list
 function appendHobbies() {
@@ -116,11 +93,8 @@ $("#hobbiesForm").submit(e => {
     var userHobbies = [];
     $("input:checked").each(function () {
 
-        //console.log($(this).val())
-        // TODO:  userHobbies.push($(this).attr('name'));
     });
-    // TODO: save hobbie array to user object using dot notation
-    //console.log({ user });
+    
     window.location.href ="./profile.html";
 });
 
@@ -169,23 +143,6 @@ let userSettings = function () {
     signupForm.classList.add("hide");
     hobbiesForm.classList.add("hideform");
     loginScreen.classList.add("loginScreen");
-    //if (localStorage.getItem("blueOceanUserProfile") !== null){
-    // let bio = localStorage.getItem("blueOceanUserProfile");
-    //      let fullBio = JSON.parse(bio)
-    //      let name = fullBio.name
-    //      let location = fullBio.location
-    //      let age = fullBio.age
-    //      let job = fullBio.job
-    //      let school = fullBio.school
-    //      let userBio = fullBio.bio
-    //      $('#name').text(name);
-    //      $('#age').text(age);
-    //      $('#job').text(job);
-    //      $('#school').text(school);
-    //      $('#userBio').text(userBio);
-    //  }
-
-
      closeNav();
 }
 
