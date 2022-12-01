@@ -205,7 +205,6 @@ $("#loginForm").submit(function (e) {
 
 // login
 function loginUser() {
-    console.log("logging in")
     let username = $('#username').val();
     let password = $('#password').val();
     // let loginAttempt = {

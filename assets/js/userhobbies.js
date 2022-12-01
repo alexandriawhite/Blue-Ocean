@@ -10,7 +10,6 @@ function hobbiesElement(hobbie) {
 
 //Appending hobbies list
 function appendUserHobbies() {
-    console.log("test")
     let hobbies = ["swimming",
         "hiking",
         "football",
@@ -54,7 +53,7 @@ $("#userhobbiesForm").submit(e => {
     //console.log({ user });
     window.location.href ="./profile.html";
 });
-console.log(userhobbies.text)
+
 userhobbies.click(appendUserHobbies)
 
 function openNav() {
